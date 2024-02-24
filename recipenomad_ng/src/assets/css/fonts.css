@@ -1,0 +1,180 @@
+@font-face {
+    font-family: 'Maison Neue Ext';
+    src: url('../fonts/MaisonNeueExt-Black.woff2') format('woff2'),
+        url('../fonts/MaisonNeueExt-Black.woff') format('woff'),
+        url('../fonts/MaisonNeueExt-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Maison Neue Ext';
+    src: url('../fonts/MaisonNeueExt-Bold.woff2') format('woff2'),
+        url('../fonts/MaisonNeueExt-Bold.woff') format('woff'),
+        url('../fonts/MaisonNeueExt-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Maison Neue Ext';
+    src: url('../fonts/MaisonNeueExt-BlackItalic.woff2') format('woff2'),
+        url('../fonts/MaisonNeueExt-BlackItalic.woff') format('woff'),
+        url('../fonts/MaisonNeueExt-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Maison Neue Ext Book';
+    src: url('../fonts/MaisonNeueExt-Book.woff2') format('woff2'),
+        url('../fonts/MaisonNeueExt-Book.woff') format('woff'),
+        url('../fonts/MaisonNeueExt-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Maison Neue Ext';
+    src: url('../fonts/MaisonNeueExt-Thin.woff2') format('woff2'),
+        url('../fonts/MaisonNeueExt-Thin.woff') format('woff'),
+        url('../fonts/MaisonNeueExt-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Maison Neue Ext ExtraThin';
+    src: url('../fonts/MaisonNeueExt-ExtraThinItalic.woff2') format('woff2'),
+        url('../fonts/MaisonNeueExt-ExtraThinItalic.woff') format('woff'),
+        url('../fonts/MaisonNeueExt-ExtraThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Maison Neue Ext';
+    src: url('../fonts/MaisonNeueExt-Light.woff2') format('woff2'),
+        url('../fonts/MaisonNeueExt-Light.woff') format('woff'),
+        url('../fonts/MaisonNeueExt-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Maison Neue Ext';
+    src: url('../fonts/MaisonNeueExt-BoldItalic.woff2') format('woff2'),
+        url('../fonts/MaisonNeueExt-BoldItalic.woff') format('woff'),
+        url('../fonts/MaisonNeueExt-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Maison Neue Ext';
+    src: url('../fonts/MaisonNeueExt-ThinItalic.woff2') format('woff2'),
+        url('../fonts/MaisonNeueExt-ThinItalic.woff') format('woff'),
+        url('../fonts/MaisonNeueExt-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Maison Neue Ext ExtBold';
+    src: url('../fonts/MaisonNeueExt-ExtraBold.woff2') format('woff2'),
+        url('../fonts/MaisonNeueExt-ExtraBold.woff') format('woff'),
+        url('../fonts/MaisonNeueExt-ExtraBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Maison Neue Ext';
+    src: url('../fonts/MaisonNeueExt-ExtraBoldItalic.woff2') format('woff2'),
+        url('../fonts/MaisonNeueExt-ExtraBoldItalic.woff') format('woff'),
+        url('../fonts/MaisonNeueExt-ExtraBoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Maison Neue Ext Demi';
+    src: url('../fonts/MaisonNeueExt-Demi.woff2') format('woff2'),
+        url('../fonts/MaisonNeueExt-Demi.woff') format('woff'),
+        url('../fonts/MaisonNeueExt-Demi.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Maison Neue Ext';
+    src: url('../fonts/MaisonNeueExt-LightItalic.woff2') format('woff2'),
+        url('../fonts/MaisonNeueExt-LightItalic.woff') format('woff'),
+        url('../fonts/MaisonNeueExt-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Maison Neue Ext ExtraThin';
+    src: url('../fonts/MaisonNeueExt-ExtraThin.woff2') format('woff2'),
+        url('../fonts/MaisonNeueExt-ExtraThin.woff') format('woff'),
+        url('../fonts/MaisonNeueExt-ExtraThin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Maison Neue Ext Demi';
+    src: url('../fonts/MaisonNeueExt-DemiItalic.woff2') format('woff2'),
+        url('../fonts/MaisonNeueExt-DemiItalic.woff') format('woff'),
+        url('../fonts/MaisonNeueExt-DemiItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Maison Neue Ext';
+    src: url('../fonts/MaisonNeueExt-Medium.woff2') format('woff2'),
+        url('../fonts/MaisonNeueExt-Medium.woff') format('woff'),
+        url('../fonts/MaisonNeueExt-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Maison Neue Ext Book';
+    src: url('../fonts/MaisonNeueExt-BookItalic.woff2') format('woff2'),
+        url('../fonts/MaisonNeueExt-BookItalic.woff') format('woff'),
+        url('../fonts/MaisonNeueExt-BookItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Maison Neue Ext';
+    src: url('../fonts/MaisonNeueExt-MediumItalic.woff2') format('woff2'),
+        url('../fonts/MaisonNeueExt-MediumItalic.woff') format('woff'),
+        url('../fonts/MaisonNeueExt-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
