@@ -213,6 +213,11 @@ section{
 }
 .homeBannerContent .left h2{
     width: 500px;
+    margin-bottom: 1rem;
+}
+.homeBannerContent .left p{
+    font-size: 18px;
+    margin-bottom: 1rem;
 }
 .homeBannerContent .right {
     width: 60%;
@@ -251,10 +256,10 @@ section{
     border: 2px solid black;
     color: var(--black);
 }
-
 .buttonContainer{
     display: flex;
     flex-direction: row;
+    margin-top: 1rem;
 }
 /* mobile styling */
 @media (max-width:975px){
