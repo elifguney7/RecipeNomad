@@ -298,6 +298,10 @@ section{
     -moz-box-shadow: -12px 12px 30px -3px rgba(60, 60, 60, 0.3);
     box-shadow: -12px 12px 30px -3px rgba(59, 59, 59, 0.3);
 }
+.aboutCard p {
+    line-height: 1.5;
+    font-size: 1rem;
+}
 
 @keyframes rotate {
     from {
@@ -334,6 +338,83 @@ section{
     flex-direction: row;
     margin-top: 1rem;
 }
+/* footer styling */
+footer{
+    display: flex;
+    padding-top:40px;
+    flex-direction: column;
+}
+footer .top{
+    min-height:150px;
+    background-color: var(--white);
+    padding-left:120px;
+    padding-right: 120px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+footer .top .left{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 40%;
+}
+footer .top .left .footerLogo{
+    margin-bottom:30px
+}
+footer .center{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 30%;
+}
+footer .center a{
+    text-decoration: none;
+    font-family: 'Maison Neue Ext Book';
+    line-height: 44px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #000000;
+}
+footer .right{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 20%;
+}
+footer .right a{
+    font-family: 'Maison Neue Ext Book';
+    line-height: 44px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #000000;
+}
+footer .bottom{
+    padding-left:120px;
+    padding-right: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.bottom p{
+    color:var(--black);
+    font-size: 12px;
+    font-family: 'Maison Neue Ext Book';
+    margin-top: 20px;
+}
+.footer-icons {
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
 /* mobile styling */
 @media (max-width:975px){
     section{
