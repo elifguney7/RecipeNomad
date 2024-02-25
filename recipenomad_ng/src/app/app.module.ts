@@ -10,6 +10,7 @@ import { CreateRecipeComponent } from './components/create-recipe/create-recipe.
 import { ProfileComponent } from './components/profile/profile.component';
 import { HomeComponent } from './components/home/home.component';
 import { DetailedRecipeComponent } from './components/detailed-recipe/detailed-recipe.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DetailedRecipeComponent } from './components/detailed-recipe/detailed-r
     CreateRecipeComponent,
     ProfileComponent,
     HomeComponent,
-    DetailedRecipeComponent
+    DetailedRecipeComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

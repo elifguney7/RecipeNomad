@@ -6,6 +6,7 @@ import { CreateRecipeComponent } from './components/create-recipe/create-recipe.
 import { ProfileComponent } from './components/profile/profile.component';
 import { HomeComponent } from './components/home/home.component';
 import { DetailedRecipeComponent } from './components/detailed-recipe/detailed-recipe.component';
+import { AboutComponent } from './components/about/about.component';
 
 const routes: Routes = [
 
@@ -14,11 +15,10 @@ const routes: Routes = [
     { path: "profile", component: ProfileComponent },
     { path: "home", component: HomeComponent },
     { path: "detailed-recipe", component: DetailedRecipeComponent },
+    { path: "about", component: AboutComponent },
 
 
     { path: '', redirectTo: "home", pathMatch: "full" },
-
-
 ];
 
 @NgModule({

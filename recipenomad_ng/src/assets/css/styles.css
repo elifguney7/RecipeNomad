@@ -231,7 +231,7 @@ section{
     max-width: 900px;
     animation: rotate 30s linear infinite;
 }
-
+/* Home page recipe list section */
 .recipesPreview {
     display: flex;
     flex-direction: column;
@@ -268,13 +268,35 @@ section{
     object-position: center ; /* Crop and center horizontally */
     border-top-right-radius: 0.75rem !important;
     border-top-left-radius: 0.75rem !important;
-
-
 }
 .card-text:last-child {
     text-decoration: underline;
     color: #000000;
     cursor: pointer;
+}
+/* Home page about section */
+.homeAbout {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    /* background-image: url("https://images.unsplash.com/photo-1671725779253-aa2351eb9271?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); */
+    background-image: url("https://images.unsplash.com/photo-1671725501884-e832fb8d0d84?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-size: cover;
+    background-position: bottom center;
+    height: 50vw;;
+}
+.aboutCard {
+    background-color: #fff;
+    opacity: 80%;
+    min-width: 300px;
+    width: 35%;
+    height: fit-content;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    -webkit-box-shadow: -12px 12px 30px -3px rgba(60, 60, 60, 0.3);
+    -moz-box-shadow: -12px 12px 30px -3px rgba(60, 60, 60, 0.3);
+    box-shadow: -12px 12px 30px -3px rgba(59, 59, 59, 0.3);
 }
 
 @keyframes rotate {
