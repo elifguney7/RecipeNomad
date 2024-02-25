@@ -5,6 +5,7 @@ import { AllRecipesComponent } from './components/all-recipes/all-recipes.compon
 import { CreateRecipeComponent } from './components/create-recipe/create-recipe.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { HomeComponent } from './components/home/home.component';
+import { DetailedRecipeComponent } from './components/detailed-recipe/detailed-recipe.component';
 
 const routes: Routes = [
 
@@ -12,6 +13,8 @@ const routes: Routes = [
     { path: "create-recipes", component: CreateRecipeComponent },
     { path: "profile", component: ProfileComponent },
     { path: "home", component: HomeComponent },
+    { path: "detailed-recipe", component: DetailedRecipeComponent },
+
 
     { path: '', redirectTo: "home", pathMatch: "full" },
 
