@@ -5,13 +5,13 @@
             <h2>Cooking Made Fun and Easy: Unleash Your Inner Chef</h2>
             <p>Get any help from voice commands. Enjoy hands-free cooking experience.</p>
             <div class="buttonContainer">
-                <button class="primaryButton" routerLink="/all-recipes">                       
+                <button class="primaryButton" routerLink="/all-recipes">
                    See Recipes
                 </button>
-                <button class="primaryButton" routerLink="/create-recipes">                       
+                <button class="primaryButton" routerLink="/create-recipes">
                     Create Recipe
                 </button>
-            </div>        
+            </div>
         </div>
         <div class="right">
             <img src="./assets/images/plate.webp" alt="Home page plate"/>
@@ -22,7 +22,12 @@
     <!-- All recipes preview start -->
     <section class="recipesPreview">
         <div class="recipesPreviewContent">
+          <div class="recipeHeadernButton">
             <h3>Your all time favorite recipes</h3>
+            <div class="allRecipeButton">
+              <button class="primaryButton" routerLink="/all-recipes">See all recipes</button>
+            </div>
+          </div>
             <div class="recipesGrid">
             <div class="row row-cols-1 row-cols-md-3">
                 <div class="col mb-4">
@@ -30,7 +35,7 @@
                     <img src="./assets/images/recipe-1.jpg" class="card-img-top" alt="recipe image 1">
                     <div class="card-body">
                       <h5 class="card-title">Salmon in Creamy Tomato Sauce</h5>
-                      <a class="card-text" routerLink="/detailed-recipe">View Recipe</a> 
+                      <a class="card-text" routerLink="/detailed-recipe">View Recipe</a>
                     </div>
                   </div>
                 </div>
@@ -48,7 +53,7 @@
                     <img src="./assets/images/recipe-3.jpg" class="card-img-top" alt="recipe image 3">
                     <div class="card-body">
                       <h5 class="card-title">Brownie</h5>
-                      <a class="card-text" routerLink="/detailed-recipe">View Recipe</a> 
+                      <a class="card-text" routerLink="/detailed-recipe">View Recipe</a>
                     </div>
                   </div>
                 </div>
@@ -57,7 +62,7 @@
                     <img src="./assets/images/recipe-4.jpg" class="card-img-top" alt="recipe image 4">
                     <div class="card-body">
                       <h5 class="card-title">Pizza</h5>
-                      <a class="card-text" routerLink="/detailed-recipe">View Recipe</a> 
+                      <a class="card-text" routerLink="/detailed-recipe">View Recipe</a>
                     </div>
                   </div>
                 </div>
@@ -71,7 +76,7 @@
         <div class="aboutCard">
             <h3>About Us</h3>
             <p>
-                Our aim is <b>hands free</b> cooking experience. You can listen ingredient list and steps of the recipe. 
+                Our aim is <b>hands free</b> cooking experience. You can listen ingredient list and steps of the recipe.
                 Also, can interact with video by saying START, STOP, SLOWLY, BACK. Let's give it a try and be one of us!
             </p>
             <button class="primaryButton" routerLink="/about">

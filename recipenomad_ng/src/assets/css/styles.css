@@ -167,8 +167,8 @@ section{
     position: fixed;
     padding:0;
     width:100%;
-    height: 0; 
-    overflow-y: auto; 
+    height: 0;
+    overflow-y: auto;
 }
 .mobileNavigation .navContainer{
     height: 70%;
@@ -178,7 +178,7 @@ section{
 }
 
 .mobileNavigation .navContainer::-webkit-scrollbar {
-    display: none; 
+    display: none;
 }
 
 .mobileNavigation .navContainer a{
@@ -192,8 +192,8 @@ section{
     cursor: pointer;
 }
 .mobileNavigation .navContainer .submenu-link {
-    font-size: 20px; 
-    line-height: 2.5;    
+    font-size: 20px;
+    line-height: 2.5;
 }
 
 /* home page banner styling */
@@ -231,6 +231,7 @@ section{
     max-width: 900px;
     animation: rotate 30s linear infinite;
 }
+
 /* Home page recipe list section */
 .recipesPreview {
     display: flex;
@@ -246,6 +247,23 @@ section{
     align-items: center;
     height: 100%;
 }
+
+/* Home Page All recipe header-button*/
+.recipeHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Align items vertically in the center */
+}
+
+.recipeHeader h3 {
+  font-size: 18px; /* Adjust the font size as needed */
+  margin: 0; /* Reset margin to remove any default margins */
+}
+
+.allRecipeButton {
+  align-self: flex-start; /* Align the button to the start (top) of the flex container */
+}
+
 .recipesPreviewContent h3 {
     width: 100%;
     padding-bottom: 2rem;
@@ -262,9 +280,9 @@ section{
     border-radius: 0.75rem !important;
 }
 .card-img-top  {
-    width: 100%; 
-    height: 200px; 
-    object-fit: cover; 
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
     object-position: center ; /* Crop and center horizontally */
     border-top-right-radius: 0.75rem !important;
     border-top-left-radius: 0.75rem !important;
