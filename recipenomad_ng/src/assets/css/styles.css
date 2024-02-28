@@ -231,6 +231,47 @@ section{
     max-width: 900px;
     animation: rotate 30s linear infinite;
 }
+/*Home page categories section*/
+.homeCategories{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.recipeCategories{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+}
+.recipeCategories h1{
+    text-align: left;
+    width: 100%;
+}
+.categoriesSection{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.recipeCategories .categoriesTitle{
+    align-items: center;
+    padding-left: 120px;
+    padding-right: 120px;
+}
+.categoriesLogos{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.categoriesLogos .imgLogo{
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+}
+.categoriesSubtitle{
+    font-size: 30px;
+}
 
 /* Home page recipe list section */
 .recipesPreview {
