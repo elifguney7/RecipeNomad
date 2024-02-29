@@ -1,1 +1,36 @@
-<p>profile works!</p>
+<section class="profilePage">
+    <div class="mainProfilePage">
+        <h1>Profile</h1>
+        <button class="saveButton">SAVE</button>
+        <img src="./assets/images/user-icon.png" class="profileIcon" alt="Profile Icon">
+        <button class="changePhotoButton">Change Photo</button>
+        <button class="deletePhotoButton">Delete</button>
+        <form action="userInfoForm">
+            <div class="userInfo">
+                <div>
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Name Surname" required>
+                </div>
+                <div>
+                    <label for="username">User Name</label>
+                    <input type="text" id="username" name="username" placeholder="Username" required>
+                </div>
+            </div>
+            <div class="userInfo">
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="user@recipenomad.com" required>
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="**********" required>
+                </div>
+            </div>
+            <button class="changePasswordButton">Change Password</button>
+        </form>
+        <h2>Connected Accounts</h2> <!--ayrı bir div açsam mı bunun için bilemedim-->
+        <!--bu başlığın altına facebook connectleme kısmını yapayım mı bi de connect ve disconnect yazılarını nasıl ayarlayabiliriz-->
+        <button class="signOutButton">Sign Out</button>
+        <button class="deleteAccountButton">Delete Account</button>
+    </div>
+</section>

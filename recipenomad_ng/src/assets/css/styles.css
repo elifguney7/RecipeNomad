@@ -231,6 +231,47 @@ section{
     max-width: 900px;
     animation: rotate 30s linear infinite;
 }
+/*Home page categories section*/
+.homeCategories{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.recipeCategories{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+}
+.recipeCategories h1{
+    text-align: left;
+    width: 100%;
+}
+.categoriesSection{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.recipeCategories .categoriesTitle{
+    align-items: center;
+    padding-left: 120px;
+    padding-right: 120px;
+}
+.categoriesLogos{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.categoriesLogos .imgLogo{
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+}
+.categoriesSubtitle{
+    font-size: 30px;
+}
 
 /* Home page recipe list section */
 .recipesPreview {
@@ -458,3 +499,109 @@ footer .bottom{
         cursor: pointer;
     }
 }
+
+/*Profile Page*/
+.profilePage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.mainProfilePage{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-top: 20%;
+}
+.mainProfilePage h1{
+    font-size: 30px;
+}
+.saveButton{
+    position: absolute;
+    right: 10%;
+    width: 10%;
+    height: 3%;
+    border-radius: 10%;
+    border: none;
+    cursor: pointer;
+}
+.profileIcon{
+    border-radius: 200%;
+    width: 10%;
+    margin-top: 5%;
+}
+.changePhotoButton{
+    position: absolute;
+    margin-top: 10%;
+    right: 60%;
+    width: 15%;
+    height: 3%;
+    border-radius: 10%;
+    border: none;
+    cursor: pointer;
+}
+.deletePhotoButton{
+    position: absolute;
+    margin-top: 10%;
+    right: 47%;
+    width: 10%;
+    height: 3%;
+    border-radius: 10%;
+    border: 1px solid #000000;
+    background-color: white;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.userInfo{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5%;
+    justify-content: space-between;
+}
+.userInfo label{
+    width: 50%;
+    margin-bottom: 5px;
+}
+.userInfo input{
+    width: max-content;
+    border: none;
+    border-bottom: 1px solid #000000;
+    height: 100%;
+}
+.changePasswordButton{
+    margin-top: 5%;
+    display: flex;
+    margin-left: auto;
+    border-radius: 10%;
+    border: 1px solid;
+    cursor: pointer;
+    background-color: white;
+}
+.mainProfilePage h2{
+    margin-top: 15%;
+    font-size: 15px;
+}
+.deleteAccountButton{
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    width: 15%;
+    height: 3%;
+    border-radius: 10%;
+    border: none;
+    color: red;
+    background-color: white;
+    cursor: pointer;
+}
+.signOutButton{ /* sola yaklaşması lazım*/
+    position: absolute;
+    bottom: 10%;
+    width: 15%;
+    height: 3%;
+    border-radius: 10%;
+    border: none;
+    cursor: pointer;
+    background-color: white;
+}
+
