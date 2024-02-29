@@ -269,6 +269,7 @@ section{
     width: 150px;
     height: 150px;
     border-radius: 100px;
+    object-fit: cover;
 }
 .categoriesSubtitle{
     font-size: 30px;
