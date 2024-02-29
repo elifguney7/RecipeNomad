@@ -615,3 +615,13 @@ footer .bottom{
     background-color: white;
 }
 
+.allRecipesBanner {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    background-image: url('../images/bg.png');
+    background-position: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: auto;
+}
