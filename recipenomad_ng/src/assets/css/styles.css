@@ -236,6 +236,7 @@ section{
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: auto;
 }
 .recipeCategories{
     display: flex;
@@ -300,14 +301,23 @@ section{
   font-size: 18px; /* Adjust the font size as needed */
   margin: 0; /* Reset margin to remove any default margins */
 }
-
-.allRecipeButton {
-  align-self: flex-start; /* Align the button to the start (top) of the flex container */
+.recipeHeadernButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: stretch;
+    padding-bottom: 1rem;
 }
-
+.recipeHeadernButton button {
+    margin: 0;
+}
+.allRecipeButton {
+    margin: 0;
+    align-items: center;
+}
 .recipesPreviewContent h3 {
     width: 100%;
-    padding-bottom: 2rem;
+    margin: 0;
     text-align: start;
 }
 .recipesGrid {
