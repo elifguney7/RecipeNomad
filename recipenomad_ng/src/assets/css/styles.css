@@ -512,6 +512,7 @@ footer .bottom{
 
 /*Profile Page*/
 .profilePage{
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -520,17 +521,26 @@ footer .bottom{
 .mainProfilePage{
     display: flex;
     width: 100%;
+    padding-top: 10%;
     justify-content: space-between;
     flex-direction: column;
-    margin-top: 20%;
 }
 .mainProfilePage h1{
     font-size: 30px;
+    position: relative;
+}
+.mainProfilePage h1::after {
+    content: ''; 
+    position: absolute; 
+    bottom: -5px; 
+    left: 0; 
+    width: 100%; 
+    border-bottom: 2px solid black; 
 }
 .saveButton{
     position: absolute;
     right: 10%;
-    width: 10%;
+    width: 5%;
     height: 3%;
     border-radius: 10%;
     border: none;
@@ -544,20 +554,22 @@ footer .bottom{
 .changePhotoButton{
     position: absolute;
     margin-top: 10%;
-    right: 60%;
-    width: 15%;
-    height: 3%;
-    border-radius: 10%;
+    right: 70%;
+    width: 10%;
+    height: 4%;
+    border-radius: 5%;
     border: none;
     cursor: pointer;
+    color: white;
+    background-color: #000000;
 }
 .deletePhotoButton{
     position: absolute;
     margin-top: 10%;
-    right: 47%;
-    width: 10%;
-    height: 3%;
-    border-radius: 10%;
+    right: 63%;
+    width: 5%;
+    height: 4%;
+    border-radius: 5%;
     border: 1px solid #000000;
     background-color: white;
     justify-content: space-between;
@@ -567,61 +579,47 @@ footer .bottom{
     display: flex;
     flex-direction: row;
     margin-top: 5%;
-    justify-content: space-between;
+
+}
+.userInfo div {
+    flex: 1; 
+    margin-right: 15%; 
+}
+
+.userInfo div:last-child {
+    margin-right: 25%;
 }
 .userInfo label{
-    width: 50%;
-    margin-bottom: 5px;
+    margin-bottom: 1%;
 }
 .userInfo input{
-    width: max-content;
+    width: 100%;
     border: none;
     border-bottom: 1px solid #000000;
     height: 100%;
 }
-.changePasswordButton{
+.buttonContainer {
+    position: relative;
     margin-top: 5%;
-    display: flex;
-    margin-left: auto;
-    border-radius: 10%;
-    border: 1px solid;
-    cursor: pointer;
+}
+.changePasswordButton,
+.signOutButton,
+.deleteAccountButton {
+    position: absolute;
+    bottom: 10%; /* İstenilen konuma göre ayarlayın */
+    border: none;
     background-color: white;
 }
-.mainProfilePage h2{
-    margin-top: 15%;
-    font-size: 15px;
+.signOutButton {
+    left: 0; /* İstenilen konuma göre ayarlayın */
 }
-.deleteAccountButton{
-    position: absolute;
-    bottom: 10%;
-    right: 10%;
-    width: 15%;
-    height: 3%;
-    border-radius: 10%;
-    border: none;
+.deleteAccountButton {
+    right: 24%; /* İstenilen konuma göre ayarlayın */
     color: red;
-    background-color: white;
-    cursor: pointer;
 }
-.signOutButton{ /* sola yaklaşması lazım*/
-    position: absolute;
-    bottom: 10%;
-    width: 15%;
-    height: 3%;
+.changePasswordButton{
+    right: 25%;
+    border: 1px solid black;
     border-radius: 10%;
-    border: none;
-    cursor: pointer;
-    background-color: white;
 }
 
-.allRecipesBanner {
-    display: flex;
-    align-items: start;
-    justify-content: center;
-    background-image: url('../images/bg.png');
-    background-position: 100%;
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: auto;
-}
