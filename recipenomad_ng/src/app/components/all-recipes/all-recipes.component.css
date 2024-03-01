@@ -1,0 +1,138 @@
+.allRecipesBannerContent {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    padding-top: 5rem;
+    padding-bottom: 7rem;
+}
+.allRecipesBannerContent h3{
+    width: 100%;
+    text-align: left;
+    padding-bottom: 1rem;
+}
+.primaryCard {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-height: 35rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0.75rem;
+    border: 2px solid rgb(255, 199, 95);
+}
+.primaryCard .left {
+    display: flex ;
+    width: 50%;
+    justify-content: left;
+}
+.primaryCard .left img{
+    width: 100%;
+    object-fit:cover;
+    object-position: center ;
+    border-top-left-radius: 0.55rem;
+    border-bottom-left-radius: 0.55rem;
+}
+.primaryCard .right {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+    padding: 0 3rem 0 3rem ;
+}
+.primaryCard .toRight {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 2rem;
+}
+.primaryCard .toRight button {
+    margin-right: 0;
+    margin-top: 0;
+    width: 150px;
+}
+.primaryCard .toRight span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+span p {
+    margin: 0;
+    margin-left: 0.5rem;
+}
+.primaryButton:hover svg path{
+    fill: black;
+}
+.right h4 {
+    font-weight: 700;
+    padding-bottom: 1rem;
+}
+.right p {
+    font-size: 16px;
+    width: 90%;
+}
+
+.secondaryButton {
+    width: 200px;
+    height:50px;
+    background-color: rgb(255, 255, 255);
+    color:var(--black);
+    font-size:14px !important;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.75rem;
+    margin-top:20px;
+    cursor: pointer;
+    border: 2px solid black;
+}
+.secondaryButton span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.secondaryButton:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+.secondaryButton:hover svg path{
+    fill: #fff !important;
+} 
+.allRecipesContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.allRecipesContainerContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.allRecipesGrid {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    height: 100%;
+}
+.allRecipesGrid h3 {
+    width: 100%;
+    margin: 0;
+    text-align: start;
+}
+.dropdown button {
+    width:195px;
+    height:50px;
+    border-radius: 0.75rem;
+    background-color: var(--black);
+    color:var(--white);
+    font-size:15px !important;
+    font-weight: bold;
+}
+.dropdown-menu {
+    width:195px;
+}
+.dropdown-item {
+    margin-top: 0.5rem;
+}
