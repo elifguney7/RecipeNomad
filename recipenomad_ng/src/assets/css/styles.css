@@ -1,6 +1,15 @@
-/*1. Header Styles */
-/* mobile styling */
-
+/*Header Styles 
+    home page banner styling 
+    Home page categories section
+    Home page recipe list section
+    Home page about section 
+    footer styling 
+    All Recipes page 
+    Detailed Recipe Page 
+    Profile Page
+    mobile styling 
+        Detailed Recipe Page Mobile 
+*/
 
 @import url('fonts.css');
 :root{
@@ -9,7 +18,6 @@
     --black:#000000;
     --white:#ffffff;
     --grey:#979797;
-    --pink:#FEF0EF;
     --lightGray:#D0D0D0;
 }
 html{
@@ -58,7 +66,7 @@ section{
     padding-right:120px
 }
 
-/*1. Header Styles */
+/*Header Styles */
 .header{
     display: flex;
     background-color: var(--white);
@@ -175,11 +183,9 @@ section{
     padding-bottom: 40%;
     -ms-overflow-style: none;
 }
-
 .mobileNavigation .navContainer::-webkit-scrollbar {
     display: none;
 }
-
 .mobileNavigation .navContainer a{
     font-family: 'Maison Neue Ext Demi';
     font-size:26px;
@@ -194,7 +200,6 @@ section{
     font-size: 20px;
     line-height: 2.5;
 }
-
 /* home page banner styling */
 .homeBanner {
     display: flex;
@@ -289,17 +294,14 @@ section{
     align-items: center;
     height: 100%;
 }
-
-/* Home Page All recipe header-button*/
 .recipeHeader {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Align items vertically in the center */
+  align-items: center; 
 }
-
 .recipeHeader h3 {
-  font-size: 18px; /* Adjust the font size as needed */
-  margin: 0; /* Reset margin to remove any default margins */
+  font-size: 18px; 
+  margin: 0; 
 }
 .recipeHeadernButton {
     display: flex;
@@ -349,7 +351,6 @@ section{
     flex-direction: column;
     align-items: start;
     justify-content: center;
-    /* background-image: url("https://images.unsplash.com/photo-1671725779253-aa2351eb9271?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); */
     background-image: url("https://images.unsplash.com/photo-1671725501884-e832fb8d0d84?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     background-size: cover;
     background-position: bottom center;
@@ -482,34 +483,265 @@ footer .bottom{
     justify-content: space-between;
     align-items: center;
 }
-
-
-/* mobile styling */
-@media (max-width:975px){
-    section{
-        padding-left:20px;
-        padding-right:20px
-    }
-    .logo{
-        padding-left: 20px;
-    }
-    .nav{
-        display:none
-    }
-    .navButton{
-        display: flex;
-    }
-    .nav a{
-        margin:0 15px;
-        color:var(--black);
-        text-decoration: none;
-        font-size:15px;
-        font-weight: 500;
-        position: relative;
-        cursor: pointer;
-    }
+/* All Recipes page */
+.allRecipesBanner {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    background-image: url('../images/bg.png');
+    background-position: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: auto;
+}
+.allRecipesBannerContent {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    padding-top: 5rem;
+    padding-bottom: 7rem;
+}
+.allRecipesBannerContent h3{
+    width: 100%;
+    text-align: left;
+    padding-bottom: 1rem;
+}
+.primaryCard {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-height: 35rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0.75rem;
+    border: 2px solid rgb(255, 199, 95);
+}
+.primaryCard .left {
+    display: flex ;
+    width: 50%;
+    justify-content: left;
+}
+.primaryCard .left img{
+    width: 100%;
+    object-fit:cover;
+    object-position: center ;
+    border-top-left-radius: 0.55rem;
+    border-bottom-left-radius: 0.55rem;
+}
+.primaryCard .right {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+    padding: 0 3rem 0 3rem ;
+}
+.primaryCard .toRight {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 2rem;
+}
+.primaryCard .toRight button {
+    margin-right: 0;
+    margin-top: 0;
+    width: 150px;
+}
+.primaryCard .toRight span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+span p {
+    margin: 0;
+    margin-left: 0.5rem;
+}
+.primaryButton:hover svg path{
+    fill: black;
+}
+.right h4 {
+    font-weight: 700;
+    padding-bottom: 1rem;
+}
+.right p {
+    font-size: 16px;
+    width: 90%;
 }
 
+.secondaryButton {
+    width: 200px;
+    height:50px;
+    background-color: rgb(255, 255, 255);
+    color:var(--black);
+    font-size:14px !important;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.75rem;
+    margin-top:20px;
+    cursor: pointer;
+    border: 2px solid black;
+}
+.secondaryButton span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.secondaryButton:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+.secondaryButton:hover svg path{
+    fill: #fff !important;
+} 
+.allRecipesContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.allRecipesContainerContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.allRecipesGrid {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    height: 100%;
+}
+.allRecipesGrid h3 {
+    width: 100%;
+    margin: 0;
+    text-align: start;
+}
+.dropdown button {
+    width:195px;
+    height:50px;
+    border-radius: 0.75rem;
+    background-color: var(--black);
+    color:var(--white);
+    font-size:15px !important;
+    font-weight: bold;
+}
+.dropdown-menu {
+    width:195px;
+}
+.dropdown-item {
+    margin-top: 0.5rem;
+}
+/* Detailed Recipe Page */
+.detailedRecipeMedia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: auto;
+}
+.videoContainer {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    height: 100%;
+    padding-top: 5rem;
+}
+.videoContainer video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.videoContainer h3 {
+    text-align: left;
+    width: 100%;
+}
+.detailedRecipeInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: auto;
+    padding-bottom: 3rem;
+}
+.cardContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: self-start;
+    justify-content: space-between;
+    width: 80%;
+    height: auto;
+}
+.ingredientCard {
+    background-color: rgb(241, 241, 241);
+    width: 48%;
+    height: fit-content;
+    padding: 1rem;
+    border-radius: 0.75rem;
+}
+.ingredientCard p {
+    font-weight: 700;
+    padding-left: 1rem;
+}
+.instructionCard {
+    background-color: rgb(241, 241, 241);
+    width: 48%;
+    height: fit-content;
+    padding: 1rem;
+    border-radius: 0.75rem;
+}
+.instructionCard p {
+    font-weight: 700;
+    padding-left: 1rem;
+}
+.secondaryButton {
+    width:125px;
+    height:40px;
+    background-color: rgb(241, 241, 241);
+    color:var(--black);
+    font-size:14px !important;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.75rem;
+    margin-top:20px;
+    cursor: pointer;
+    border: 2px solid black;
+}
+.secondaryButton:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+.suggestionsCard {
+    background-color: rgb(241, 241, 241);
+    width: 80%;
+    height: fit-content;
+    padding: 1rem;
+    margin-top: 3rem;
+    border-radius: 0.75rem;
+}
+.ingredientCard span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.ingredientCard .addButton {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+.ingredientCard span p {
+    display: flex;
+    text-align: center;
+    margin: 0;
+    font-weight: normal;
+}
+.ingredientCard .addButton svg {
+    vertical-align: bottom;
+}
 /*Profile Page*/
 .profilePage{
     position: relative;
@@ -579,13 +811,11 @@ footer .bottom{
     display: flex;
     flex-direction: row;
     margin-top: 5%;
-
 }
 .userInfo div {
     flex: 1; 
     margin-right: 15%; 
 }
-
 .userInfo div:last-child {
     margin-right: 25%;
 }
@@ -606,15 +836,15 @@ footer .bottom{
 .signOutButton,
 .deleteAccountButton {
     position: absolute;
-    bottom: 10%; /* İstenilen konuma göre ayarlayın */
+    bottom: 10%; 
     border: none;
     background-color: white;
 }
 .signOutButton {
-    left: 0; /* İstenilen konuma göre ayarlayın */
+    left: 0; 
 }
 .deleteAccountButton {
-    right: 24%; /* İstenilen konuma göre ayarlayın */
+    right: 24%;
     color: red;
 }
 .changePasswordButton{
@@ -622,4 +852,53 @@ footer .bottom{
     border: 1px solid black;
     border-radius: 10%;
 }
+/* mobile styling */
+@media (max-width:975px){
+    section{
+        padding-left:20px;
+        padding-right:20px
+    }
+    .logo{
+        padding-left: 20px;
+    }
+    .nav{
+        display:none
+    }
+    .navButton{
+        display: flex;
+    }
+    .nav a{
+        margin:0 15px;
+        color:var(--black);
+        text-decoration: none;
+        font-size:15px;
+        font-weight: 500;
+        position: relative;
+        cursor: pointer;
+    }
+    /* Detailed Recipe Page Mobile */
+    .videoContainer {
+        width: 100%;
+    }
+    .cardContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        height: auto;
+        width: 100%;
+    }
+    .ingredientCard {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    .instructionCard {
+        width: 100%;
+    }
+    .suggestionsCard {
+        width: 100%;
+    }
+}
+
+
 
