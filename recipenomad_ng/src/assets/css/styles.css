@@ -566,7 +566,6 @@ span p {
     font-size: 16px;
     width: 90%;
 }
-
 .detailRecipeButton {
     width: 200px;
     height:50px;
@@ -923,17 +922,17 @@ span p {
         flex-direction: column;
         width: 100%;
         align-items: center;
-        overflow: hidden;
+
     }
-    .recipeCategories h2{
-        text-align: left;
-        width: 100%;
+    .recipeCategories h3{
+        overflow: hidden;
     }
     .categoriesSection{
         width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        overflow-x: scroll;
     }
     .categoriesLogos {
         padding-left: 1rem;
@@ -989,7 +988,7 @@ span p {
     .aboutCard p {
         line-height: 1.2;
         font-size: 14px;
-        }
+    }
     /* Detailed Recipe Page Mobile */
     .videoContainer {
         width: 100%;
@@ -1011,6 +1010,88 @@ span p {
     }
     .suggestionsCard {
         width: 100%;
+    }
+    /* All Recipes page */
+    .allRecipesBanner {
+        background-image: none;
+    }
+    .allRecipesBannerContent {
+        width: 100%;
+        align-items: center;
+        padding-bottom: 0;
+    }
+    .primaryCard {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .primaryCard .left {
+        display: flex ;
+        width: 100%;
+        justify-content: left;
+    }
+    .primaryCard .left img{
+        width: 100%;
+        max-height: 150px;
+        object-fit: cover;
+        object-position: center ;
+        border-top-left-radius: 0.55rem;
+        border-top-right-radius: 0.55rem;
+        border-bottom-left-radius: 0;
+    }
+    .primaryCard .right {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        padding: 1rem ;
+    }
+    .primaryCard .toRight {
+        display: none;
+    }
+    .right h4 {
+        padding-bottom: 0;
+    }
+    .right p {
+        font-size: 14px;
+        width: 100%;
+    }
+    .detailRecipeButton {
+        margin:0;
+    }
+    .allRecipesContainerContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .allRecipesGrid {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        height: 100%;
+        overflow-y: scroll;    
+    }
+    .allRecipesGrid h3 {
+        width: 100%;
+        margin: 0;
+        text-align: start;
+    }
+    .dropdown button {
+        width:195px;
+        height:50px;
+        border-radius: 0.75rem;
+        background-color: var(--black);
+        color:var(--white);
+        font-size:15px !important;
+        font-weight: bold;
+    }
+    .dropdown-menu {
+        width:195px;
+    }
+    .dropdown-item {
+        margin-top: 0.5rem;
     }
     /* footer mobile styling*/
     footer {
