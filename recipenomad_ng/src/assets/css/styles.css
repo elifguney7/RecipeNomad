@@ -744,7 +744,6 @@ span p {
 }
 /*Profile Page*/
 .profilePage{
-    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -757,70 +756,84 @@ span p {
     justify-content: space-between;
     flex-direction: column;
 }
+.profileFirstLine {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
 .mainProfilePage h1{
-    font-size: 30px;
     position: relative;
+    margin: 0;
+    padding: 0;
 }
 .mainProfilePage h1::after {
     content: ''; 
     position: absolute; 
     bottom: -5px; 
     left: 0; 
-    width: 100%; 
-    border-bottom: 2px solid black; 
+    width: 85vw; 
+    border-bottom: 2px solid rgb(62, 62, 62);
 }
-.saveButton{
-    position: absolute;
-    right: 10%;
-    width: 5%;
-    height: 3%;
-    border-radius: 10%;
-    border: none;
-    cursor: pointer;
-}
-.profileIcon{
-    border-radius: 200%;
-    width: 10%;
-    margin-top: 5%;
-}
-.changePhotoButton{
-    position: absolute;
-    margin-top: 10%;
-    right: 70%;
-    width: 10%;
-    height: 4%;
-    border-radius: 5%;
+.profileFirstLine .saveButton{
+    width: 125px;
+    height: 45px;
+    border-radius: 0.75rem;
     border: none;
     cursor: pointer;
     color: white;
     background-color: #000000;
 }
-.deletePhotoButton{
-    position: absolute;
-    margin-top: 10%;
-    right: 63%;
-    width: 5%;
-    height: 4%;
-    border-radius: 5%;
+.profileSecondLine {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    margin-top: 2rem;
+}
+.profileSecondLine .profileIcon{
+    border-radius: 200%;
+    width: 20%;
+}
+.profileSecondLine .profilebuttoncontainer {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    align-items: flex-start;
+}
+.profilebuttoncontainer .changePhotoButton{
+    width: fit-content;
+    border-radius: 0.75rem;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: #000000;
+    padding: 0.75rem;
+}
+.profilebuttoncontainer .deletePhotoButton{
+    width: fit-content;
+    border-radius: 0.75rem;
     border: 1px solid #000000;
+    padding: 0.75rem;
     background-color: white;
     justify-content: space-between;
     cursor: pointer;
+    margin-right: 1rem;
 }
 .userInfo{
     display: flex;
     flex-direction: row;
-    margin-top: 5%;
+    margin-top: 2rem;
 }
 .userInfo div {
     flex: 1; 
     margin-right: 15%; 
-}
-.userInfo div:last-child {
-    margin-right: 25%;
+    margin-bottom: 1.5rem;
 }
 .userInfo label{
-    margin-bottom: 1%;
+    margin: 0;
 }
 .userInfo input{
     width: 100%;
@@ -828,35 +841,57 @@ span p {
     border-bottom: 1px solid #000000;
     height: 100%;
 }
+.profileThirdLine {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    margin-top: 2rem;
+}
 .buttonContainer {
-    position: relative;
-    margin-top: 5%;
-}
-.changePasswordButton,
-.signOutButton,
-.deleteAccountButton {
-    position: absolute;
-    bottom: 10%; 
-    border: none;
-    background-color: white;
-}
-.signOutButton {
-    left: 0; 
-}
-.deleteAccountButton {
-    right: 24%;
-    color: red;
+    margin-top: 2rem;
 }
 .changePasswordButton{
-    right: 25%;
-    border: 1px solid black;
-    border-radius: 10%;
+    width: fit-content;
+    border-radius: 0.75rem;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: #000000;
+    padding: 0.75rem;
+    margin-right: 1rem;
+}
+.signOutButton {
+    width: fit-content;
+    border-radius: 0.75rem;
+    border: 1.5px solid black;
+    cursor: pointer;
+    color: black;
+    background-color: #fff;
+    padding: 0.75rem;
+    margin-right: 1rem;
+
+}
+.deleteAccountButton {
+    width: fit-content;
+    border-radius: 0.75rem;
+    border: 1.5px solid black;
+    cursor: pointer;
+    color: white;
+    background-color: #fff;
+    padding: 0.75rem;
+    color: red;
 }
 /* mobile styling */
 @media (max-width:975px){
     section{
         padding-left:20px;
         padding-right:20px
+    }
+    h1 {
+        font-size: 36px;
     }
     h2 {
         font-size: 32px;
@@ -1100,6 +1135,93 @@ span p {
     }
     .dropdown-item {
         margin-top: 0.5rem;
+    }
+    /*Profile Page*/
+
+    .mainProfilePage{
+        padding-top: 5rem;
+    }
+    .profileFirstLine {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 1rem;
+    }
+    .mainProfilePage h1::after {
+        width: 90vw; 
+    }
+    .profileFirstLine .saveButton{
+        width: 100px;
+        height: 40px;
+    }
+    .profileSecondLine {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+    .profileSecondLine .profileIcon{
+        border-radius: 200%;
+        width: 25%;
+    }
+    .profileSecondLine .profilebuttoncontainer {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: end;
+    }
+    .profilebuttoncontainer .changePhotoButton{
+        margin-bottom: 0.5rem;
+    }
+    .profilebuttoncontainer .deletePhotoButton{
+        margin-right: 0;
+    }
+    .userInfo{
+        display: flex;
+        flex-direction: row;
+        margin-top: 2rem;
+    }
+    .userInfo div {
+        flex: 1; 
+        margin-right: 15%; 
+        margin-bottom: 1.5rem;
+    }
+    .userInfo label{
+        margin: 0;
+    }
+    .userInfo input{
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid #000000;
+        height: 100%;
+    }
+    .profileThirdLine {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: auto;
+        margin-top: 2rem;
+    }
+    .buttonContainer {
+        margin-top: 2rem;
+    }
+    .changePasswordButton{
+        height: 55px;
+        padding: 0;
+        text-align: center;
+        width: 125px;
+    }
+    .signOutButton {
+        height: 55px;
+        padding: 0;
+        text-align: center;
+        width: 75px;
+    }
+    .deleteAccountButton {
+        height: 55px;
+        padding: 0;
+        text-align: center;
+        width: 110px;
     }
     /* footer mobile styling*/
     footer {
