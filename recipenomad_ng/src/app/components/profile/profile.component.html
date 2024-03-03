@@ -1,10 +1,18 @@
 <section class="profilePage">
     <div class="mainProfilePage">
-        <h1>Profile</h1>
-        <button class="saveButton">SAVE</button>
-        <img src="./assets/images/user-icon.png" class="profileIcon" alt="Profile Icon">
-        <button class="changePhotoButton">Change Photo</button>
-        <button class="deletePhotoButton">Delete</button>
+        <div class="profileFirstLine">
+            <h1>Profile</h1>
+            <button class="saveButton">SAVE</button>
+        </div>
+
+        <div class="profileSecondLine">
+            <img src="./assets/images/user-icon.png" class="profileIcon" alt="Profile Icon">
+            <div class="profilebuttoncontainer">
+                <button class="deletePhotoButton">Delete</button>
+                <button class="changePhotoButton">Change Photo</button>
+            </div>
+        </div>
+        
         <form action="userInfoForm">
             <div class="userInfo">
                 <div>
@@ -25,12 +33,16 @@
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" placeholder="**********" required>
                 </div>
-            </div>
-            <button class="changePasswordButton">Change Password</button>
+            </div>    
         </form>
-        <h2>Connected Accounts</h2> <!--ayrı bir div açsam mı bunun için bilemedim-->
-        <!--bu başlığın altına facebook connectleme kısmını yapayım mı bi de connect ve disconnect yazılarını nasıl ayarlayabiliriz-->
-        <button class="signOutButton">Sign Out</button>
-        <button class="deleteAccountButton">Delete Account</button>
+
+        <div class="profileThirdLine">
+            <p>deneme deneme</p>
+        </div>
+        <div class="buttonContainer"> <!-- Yeni eklenen konteyner -->
+            <button class="changePasswordButton">Change Password</button>
+            <button class="signOutButton">Sign Out</button>
+            <button class="deleteAccountButton">Delete Account</button>
+        </div>
     </div>
 </section>
