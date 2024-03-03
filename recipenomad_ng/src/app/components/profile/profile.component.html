@@ -1,10 +1,18 @@
 <section class="profilePage">
     <div class="mainProfilePage">
-        <h1>Profile</h1>
-        <button class="saveButton">SAVE</button>
-        <img src="./assets/images/user-icon.png" class="profileIcon" alt="Profile Icon">
-        <button class="changePhotoButton">Change Photo</button>
-        <button class="deletePhotoButton">Delete</button>
+        <div class="profileFirstLine">
+            <h1>Profile</h1>
+            <button class="saveButton">SAVE</button>
+        </div>
+
+        <div class="profileSecondLine">
+            <img src="./assets/images/user-icon.png" class="profileIcon" alt="Profile Icon">
+            <div class="profilebuttoncontainer">
+                <button class="deletePhotoButton">Delete</button>
+                <button class="changePhotoButton">Change Photo</button>
+            </div>
+        </div>
+        
         <form action="userInfoForm">
             <div class="userInfo">
                 <div>
@@ -25,16 +33,14 @@
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" placeholder="**********" required>
                 </div>
-            </div>
-            <div class="buttonContainer">
-                <button class="changePasswordButton">Change Password</button>
-            </div>
-            
+            </div>    
         </form>
-        <div>
-            <h1>deneme deneme</h1>
+
+        <div class="profileThirdLine">
+            <p>deneme deneme</p>
         </div>
         <div class="buttonContainer"> <!-- Yeni eklenen konteyner -->
+            <button class="changePasswordButton">Change Password</button>
             <button class="signOutButton">Sign Out</button>
             <button class="deleteAccountButton">Delete Account</button>
         </div>

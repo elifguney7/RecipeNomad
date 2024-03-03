@@ -1,6 +1,15 @@
-/*1. Header Styles */
-/* mobile styling */
-
+/*Header Styles 
+    home page banner styling 
+    Home page categories section
+    Home page recipe list section
+    Home page about section 
+    footer styling 
+    All Recipes page 
+    Detailed Recipe Page 
+    Profile Page
+    mobile styling 
+        Detailed Recipe Page Mobile 
+*/
 
 @import url('fonts.css');
 :root{
@@ -9,7 +18,6 @@
     --black:#000000;
     --white:#ffffff;
     --grey:#979797;
-    --pink:#FEF0EF;
     --lightGray:#D0D0D0;
 }
 html{
@@ -57,8 +65,7 @@ section{
     padding-left:120px;
     padding-right:120px
 }
-
-/*1. Header Styles */
+/*Header Styles */
 .header{
     display: flex;
     background-color: var(--white);
@@ -175,11 +182,9 @@ section{
     padding-bottom: 40%;
     -ms-overflow-style: none;
 }
-
 .mobileNavigation .navContainer::-webkit-scrollbar {
     display: none;
 }
-
 .mobileNavigation .navContainer a{
     font-family: 'Maison Neue Ext Demi';
     font-size:26px;
@@ -194,7 +199,6 @@ section{
     font-size: 20px;
     line-height: 2.5;
 }
-
 /* home page banner styling */
 .homeBanner {
     display: flex;
@@ -243,7 +247,7 @@ section{
     width: 80%;
     align-items: center;
 }
-.recipeCategories h1{
+.recipeCategories h3{
     text-align: left;
     width: 100%;
 }
@@ -273,13 +277,13 @@ section{
 .categoriesSubtitle{
     font-size: 30px;
 }
-
 /* Home page recipe list section */
 .recipesPreview {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: auto;
 }
 .recipesPreviewContent {
     display: flex;
@@ -289,17 +293,14 @@ section{
     align-items: center;
     height: 100%;
 }
-
-/* Home Page All recipe header-button*/
 .recipeHeader {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Align items vertically in the center */
+  align-items: center; 
 }
-
 .recipeHeader h3 {
-  font-size: 18px; /* Adjust the font size as needed */
-  margin: 0; /* Reset margin to remove any default margins */
+  font-size: 18px; 
+  margin: 0; 
 }
 .recipeHeadernButton {
     display: flex;
@@ -314,6 +315,9 @@ section{
 .allRecipeButton {
     margin: 0;
     align-items: center;
+}
+.allRecipeButtonMobile {
+    display: none;
 }
 .recipesPreviewContent h3 {
     width: 100%;
@@ -349,7 +353,6 @@ section{
     flex-direction: column;
     align-items: start;
     justify-content: center;
-    /* background-image: url("https://images.unsplash.com/photo-1671725779253-aa2351eb9271?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); */
     background-image: url("https://images.unsplash.com/photo-1671725501884-e832fb8d0d84?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     background-size: cover;
     background-position: bottom center;
@@ -371,7 +374,6 @@ section{
     line-height: 1.5;
     font-size: 1rem;
 }
-
 @keyframes rotate {
     from {
         transform: rotate(0deg);
@@ -482,13 +484,420 @@ footer .bottom{
     justify-content: space-between;
     align-items: center;
 }
+/* All Recipes page */
+.allRecipesBanner {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    background-image: url('../images/bg.png');
+    background-position: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: auto;
+}
+.allRecipesBannerContent {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    padding-top: 5rem;
+    padding-bottom: 7rem;
+}
+.allRecipesBannerContent h3{
+    width: 100%;
+    text-align: left;
+    padding-bottom: 1rem;
+}
+.primaryCard {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-height: 35rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0.75rem;
+    border: 2px solid rgb(255, 199, 95);
+}
+.primaryCard .left {
+    display: flex ;
+    width: 50%;
+    justify-content: left;
+}
+.primaryCard .left img{
+    width: 100%;
+    object-fit:cover;
+    object-position: center ;
+    border-top-left-radius: 0.55rem;
+    border-bottom-left-radius: 0.55rem;
+}
+.primaryCard .right {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+    padding: 0 3rem 0 3rem ;
+}
+.primaryCard .toRight {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 2rem;
+}
+.primaryCard .toRight button {
+    margin-right: 0;
+    margin-top: 0;
+    width: 150px;
+}
+.primaryCard .toRight span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+span p {
+    margin: 0;
+    margin-left: 0.5rem;
+}
+.primaryButton:hover svg path{
+    fill: black;
+}
+.right h4 {
+    font-weight: 700;
+    padding-bottom: 1rem;
+}
+.right p {
+    font-size: 16px;
+    width: 90%;
+}
+.detailRecipeButton {
+    width: 200px;
+    height:50px;
+    background-color: rgb(255, 255, 255);
+    color:var(--black);
+    font-size:14px !important;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.75rem;
+    margin-top:20px;
+    cursor: pointer;
+    border: 2px solid black;
+}
+.detailRecipeButton span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.detailRecipeButton:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+.detailRecipeButton:hover svg path{
+    fill: #fff !important;
+} 
+.allRecipesContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.allRecipesContainerContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.allRecipesGrid {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    height: 100%;
+}
+.allRecipesGrid h3 {
+    width: 100%;
+    margin: 0;
+    text-align: start;
+}
+.dropdown button {
+    width:195px;
+    height:50px;
+    border-radius: 0.75rem;
+    background-color: var(--black);
+    color:var(--white);
+    font-size:15px !important;
+    font-weight: bold;
+}
+.dropdown-menu {
+    width:195px;
+}
+.dropdown-item {
+    margin-top: 0.5rem;
+}
+/* Detailed Recipe Page */
+.detailedRecipeMedia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: auto;
+}
+.videoContainer {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    height: 100%;
+    padding-top: 5rem;
+}
+.videoContainer video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.videoContainer h3 {
+    text-align: left;
+    width: 100%;
+}
+.detailedRecipeInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: auto;
+    padding-bottom: 3rem;
+}
+.cardContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: self-start;
+    justify-content: space-between;
+    width: 80%;
+    height: auto;
+}
+.ingredientCard {
+    background-color: rgb(241, 241, 241);
+    width: 48%;
+    height: fit-content;
+    padding: 1rem;
+    border-radius: 0.75rem;
+}
+.ingredientCard p {
+    font-weight: 700;
+    padding-left: 1rem;
+}
+.instructionCard {
+    background-color: rgb(241, 241, 241);
+    width: 48%;
+    height: fit-content;
+    padding: 1rem;
+    border-radius: 0.75rem;
+}
+.instructionCard p {
+    font-weight: 700;
+    padding-left: 1rem;
+}
+.secondaryButton {
+    width:125px;
+    height:40px;
+    background-color: rgb(241, 241, 241);
+    color:var(--black);
+    font-size:14px !important;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.75rem;
+    margin-top:20px;
+    cursor: pointer;
+    border: 2px solid black;
+}
+.secondaryButton:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+.suggestionsCard {
+    background-color: rgb(241, 241, 241);
+    width: 80%;
+    height: fit-content;
+    padding: 1rem;
+    margin-top: 3rem;
+    border-radius: 0.75rem;
+}
+.ingredientCard span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.ingredientCard .addButton {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+.ingredientCard span p {
+    display: flex;
+    text-align: center;
+    margin: 0;
+    font-weight: normal;
+}
+.ingredientCard .addButton svg {
+    vertical-align: bottom;
+}
+/*Profile Page*/
+.profilePage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.mainProfilePage{
+    display: flex;
+    width: 100%;
+    padding-top: 10%;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.profileFirstLine {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.mainProfilePage h1{
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+.mainProfilePage h1::after {
+    content: ''; 
+    position: absolute; 
+    bottom: -5px; 
+    left: 0; 
+    width: 85vw; 
+    border-bottom: 2px solid rgb(62, 62, 62);
+}
+.profileFirstLine .saveButton{
+    width: 125px;
+    height: 45px;
+    border-radius: 0.75rem;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: #000000;
+}
+.profileSecondLine {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    margin-top: 2rem;
+}
+.profileSecondLine .profileIcon{
+    border-radius: 200%;
+    width: 20%;
+}
+.profileSecondLine .profilebuttoncontainer {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    align-items: flex-start;
+}
+.profilebuttoncontainer .changePhotoButton{
+    width: fit-content;
+    border-radius: 0.75rem;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: #000000;
+    padding: 0.75rem;
+}
+.profilebuttoncontainer .deletePhotoButton{
+    width: fit-content;
+    border-radius: 0.75rem;
+    border: 1px solid #000000;
+    padding: 0.75rem;
+    background-color: white;
+    justify-content: space-between;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+.userInfo{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+}
+.userInfo div {
+    flex: 1; 
+    margin-right: 15%; 
+    margin-bottom: 1.5rem;
+}
+.userInfo label{
+    margin: 0;
+}
+.userInfo input{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #000000;
+    height: 100%;
+}
+.profileThirdLine {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    margin-top: 2rem;
+}
+.buttonContainer {
+    margin-top: 2rem;
+}
+.changePasswordButton{
+    width: fit-content;
+    border-radius: 0.75rem;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: #000000;
+    padding: 0.75rem;
+    margin-right: 1rem;
+}
+.signOutButton {
+    width: fit-content;
+    border-radius: 0.75rem;
+    border: 1.5px solid black;
+    cursor: pointer;
+    color: black;
+    background-color: #fff;
+    padding: 0.75rem;
+    margin-right: 1rem;
 
-
+}
+.deleteAccountButton {
+    width: fit-content;
+    border-radius: 0.75rem;
+    border: 1.5px solid black;
+    cursor: pointer;
+    color: white;
+    background-color: #fff;
+    padding: 0.75rem;
+    color: red;
+}
 /* mobile styling */
 @media (max-width:975px){
     section{
         padding-left:20px;
         padding-right:20px
+    }
+    h1 {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 32px;
+    }
+    h3 {
+        font-size: 26px;
     }
     .logo{
         padding-left: 20px;
@@ -508,118 +917,354 @@ footer .bottom{
         position: relative;
         cursor: pointer;
     }
-}
+    /* home page banner mobile */
+    .homeBannerContent {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%
+    }
+    .homeBannerContent .left {
+        width: 100%;
+        min-height: 50%;
+    }
+    .homeBannerContent .left h2{
+        max-width: 80%;
+    }
+    .homeBannerContent .left p{
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+    .homeBannerContent .left .buttonContainer {
+        margin-top: 0;
+    }
+    .homeBannerContent .right {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        max-height: 90%;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        align-content: end;
+        overflow: hidden;
+        position: relative;
+    }
+    .homeBannerContent .right img{
+        max-width: 600px;
+    }
+    /* home page categories mobile */
+    .recipeCategories{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+    .recipeCategories h3{
+        overflow: hidden;
+    }
+    .categoriesSection{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        overflow-x: scroll;
+    }
+    .categoriesLogos {
+        padding-left: 1rem;
+    }
+    .categoriesLogos h2{
+        text-align: center;
+    }
+    .categoriesSubtitle{
+        font-size: 20px;
+    }
+    /* Home page recipe list section */
+    .recipesPreviewContent{
+        width: 100%;
+    }
+    .recipesGrid {
+        width: 80%;
+    }
+    .recipeHeadernButton {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        padding-bottom: 2rem;
+    }
+    .allRecipeButton {
+        display: none;
+    }
+    .allRecipeButtonMobile {
+        display: flex;
+        padding-bottom: 2rem;
+    }
+    .allRecipeButtonMobile button{
+        display: flex;
+        justify-content: center;
+        margin: 0;
+    }
+    .card-img-top  {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+    }
+    /* Home page about section */
+    .homeAbout {
+        display: flex;
+        background-size: cover;
+        background-position: bottom center;
+        height: 80vw;
+        padding-top: 0;
+    }
+    .aboutCard {
+        min-width: 100%;
+        padding: 1rem;
+    }
+    .aboutCard p {
+        line-height: 1.2;
+        font-size: 14px;
+    }
+    /* Detailed Recipe Page Mobile */
+    .videoContainer {
+        width: 100%;
+    }
+    .cardContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        height: auto;
+        width: 100%;
+    }
+    .ingredientCard {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    .instructionCard {
+        width: 100%;
+    }
+    .suggestionsCard {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+    .suggestionsCard h3 {
+        display: flex;
+        width: 100%;
+        text-align: left;
+        padding-bottom: 1rem;
+    }
+    /* All Recipes page */
+    .allRecipesBanner {
+        background-image: none;
+    }
+    .allRecipesBannerContent {
+        width: 100%;
+        align-items: center;
+        padding-bottom: 0;
+    }
+    .primaryCard {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .primaryCard .left {
+        display: flex ;
+        width: 100%;
+        justify-content: left;
+    }
+    .primaryCard .left img{
+        width: 100%;
+        max-height: 150px;
+        object-fit: cover;
+        object-position: center ;
+        border-top-left-radius: 0.55rem;
+        border-top-right-radius: 0.55rem;
+        border-bottom-left-radius: 0;
+    }
+    .primaryCard .right {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        padding: 1rem ;
+    }
+    .primaryCard .toRight {
+        display: none;
+    }
+    .right h4 {
+        padding-bottom: 0;
+    }
+    .right p {
+        font-size: 14px;
+        width: 100%;
+    }
+    .detailRecipeButton {
+        margin:0;
+    }
+    .allRecipesContainerContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .allRecipesGrid {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        height: 100%;
+        overflow-y: scroll;    
+    }
+    .allRecipesGrid h3 {
+        width: 100%;
+        margin: 0;
+        text-align: start;
+    }
+    .dropdown button {
+        width:195px;
+        height:50px;
+        border-radius: 0.75rem;
+        background-color: var(--black);
+        color:var(--white);
+        font-size:15px !important;
+        font-weight: bold;
+    }
+    .dropdown-menu {
+        width:195px;
+    }
+    .dropdown-item {
+        margin-top: 0.5rem;
+    }
+    /*Profile Page*/
 
-/*Profile Page*/
-.profilePage{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    .mainProfilePage{
+        padding-top: 5rem;
+    }
+    .profileFirstLine {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 1rem;
+    }
+    .mainProfilePage h1::after {
+        width: 90vw; 
+    }
+    .profileFirstLine .saveButton{
+        width: 100px;
+        height: 40px;
+    }
+    .profileSecondLine {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+    .profileSecondLine .profileIcon{
+        border-radius: 200%;
+        width: 25%;
+    }
+    .profileSecondLine .profilebuttoncontainer {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: end;
+    }
+    .profilebuttoncontainer .changePhotoButton{
+        margin-bottom: 0.5rem;
+    }
+    .profilebuttoncontainer .deletePhotoButton{
+        margin-right: 0;
+    }
+    .userInfo{
+        display: flex;
+        flex-direction: row;
+        margin-top: 2rem;
+    }
+    .userInfo div {
+        flex: 1; 
+        margin-right: 15%; 
+        margin-bottom: 1.5rem;
+    }
+    .userInfo label{
+        margin: 0;
+    }
+    .userInfo input{
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid #000000;
+        height: 100%;
+    }
+    .profileThirdLine {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: auto;
+        margin-top: 2rem;
+    }
+    .buttonContainer {
+        margin-top: 2rem;
+    }
+    .changePasswordButton{
+        height: 55px;
+        padding: 0;
+        text-align: center;
+        width: 125px;
+    }
+    .signOutButton {
+        height: 55px;
+        padding: 0;
+        text-align: center;
+        width: 75px;
+    }
+    .deleteAccountButton {
+        height: 55px;
+        padding: 0;
+        text-align: center;
+        width: 110px;
+    }
+    /* footer mobile styling*/
+    footer {
+        padding-bottom: 1rem;
+    }
+    footer .top{
+        flex-wrap: wrap;
+        padding-left: 20px;
+        padding-right: 20px;
+        flex-wrap: wrap;
+    }
+    footer .top .left{
+        width: 100%;
+    }
+    footer .top .center{
+        width: 100%;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    footer .center a{
+        line-height: 26px;
+    }
+    footer .top .right{
+        width: 100%;
+        padding-bottom: 1rem;
+    }
+    footer .right span{ 
+        font-size:12px;
+    }
+    footer .right a {
+        line-height: 26px;
+    }
+    footer .bottom{
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+    footer .bottom p{
+        font-size:12px;
+        margin-top: 0;
+    }
 }
-.mainProfilePage{
-    display: flex;
-    width: 100%;
-    padding-top: 10%;
-    justify-content: space-between;
-    flex-direction: column;
-}
-.mainProfilePage h1{
-    font-size: 30px;
-    position: relative;
-}
-.mainProfilePage h1::after {
-    content: ''; 
-    position: absolute; 
-    bottom: -5px; 
-    left: 0; 
-    width: 100%; 
-    border-bottom: 2px solid black; 
-}
-.saveButton{
-    position: absolute;
-    right: 10%;
-    width: 5%;
-    height: 3%;
-    border-radius: 10%;
-    border: none;
-    cursor: pointer;
-}
-.profileIcon{
-    border-radius: 200%;
-    width: 10%;
-    margin-top: 5%;
-}
-.changePhotoButton{
-    position: absolute;
-    margin-top: 10%;
-    right: 70%;
-    width: 10%;
-    height: 4%;
-    border-radius: 5%;
-    border: none;
-    cursor: pointer;
-    color: white;
-    background-color: #000000;
-}
-.deletePhotoButton{
-    position: absolute;
-    margin-top: 10%;
-    right: 63%;
-    width: 5%;
-    height: 4%;
-    border-radius: 5%;
-    border: 1px solid #000000;
-    background-color: white;
-    justify-content: space-between;
-    cursor: pointer;
-}
-.userInfo{
-    display: flex;
-    flex-direction: row;
-    margin-top: 5%;
-
-}
-.userInfo div {
-    flex: 1; 
-    margin-right: 15%; 
-}
-
-.userInfo div:last-child {
-    margin-right: 25%;
-}
-.userInfo label{
-    margin-bottom: 1%;
-}
-.userInfo input{
-    width: 100%;
-    border: none;
-    border-bottom: 1px solid #000000;
-    height: 100%;
-}
-.buttonContainer {
-    position: relative;
-    margin-top: 5%;
-}
-.changePasswordButton,
-.signOutButton,
-.deleteAccountButton {
-    position: absolute;
-    bottom: 10%; /* İstenilen konuma göre ayarlayın */
-    border: none;
-    background-color: white;
-}
-.signOutButton {
-    left: 0; /* İstenilen konuma göre ayarlayın */
-}
-.deleteAccountButton {
-    right: 24%; /* İstenilen konuma göre ayarlayın */
-    color: red;
-}
-.changePasswordButton{
-    right: 25%;
-    border: 1px solid black;
-    border-radius: 10%;
-}
-
