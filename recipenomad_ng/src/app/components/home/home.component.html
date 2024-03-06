@@ -20,44 +20,49 @@
 </section>
     <!-- Home banner end -->
     <!--Categories Start-->
-    <section class="homeCategories">
-      <div class="recipeCategories">
-        <h3>Categories</h3>
-        <div class="categoriesSection">
-          <div class="categoriesLogos">
-            <a href="">
-              <img src="./assets/images/breakfastLogo.jpg" class="imgLogo" alt="breakfast logo">
-              <h4 class="categoriesSubtitle">Breakfast</h4>
-            </a>
-          </div>
-          <div class="categoriesLogos">
-            <a href="">
-              <img src="./assets/images/dessertsLogo.jpg" class="imgLogo" alt="desserts logo">
-              <h4 class="categoriesSubtitle">Desserts</h4>
-            </a>
-          </div>
-          <div class="categoriesLogos">
-            <a href="">          
-              <img src="./assets/images/pastaLogo.jpg" class="imgLogo" alt="pasta logo">  
-              <h4 class="categoriesSubtitle">Pasta</h4>
-            </a>
-          </div>
-          <div class="categoriesLogos">
-            <a href="">
-              <img src="./assets/images/pizzaLogo.jpg" class="imgLogo" alt="pizza logo">
-              <h4 class="categoriesSubtitle">Pizza</h4>
-            </a>
-          </div>
-          <div class="categoriesLogos">
-            <a href="">
-              <img src="./assets/images/veganLogo.jpg" class="imgLogo" alt="vegan logo">
-              <h4 class="categoriesSubtitle">Vegan</h4>
-            </a>
+    <section class="homeCategories"> <!--center-->
+      <h3>Categories</h3>
+      <div class="navigationButtonsLeft">
+        <button class="prevButton"><</button>
+      </div>
+      <div class="navigationButtonsRight">
+        <button class="nextButton">></button>
+      </div>
+      <div class="recipeCategories"> <!--wrapper-->
+          <div class="categoriesSection"> <!--inner-->
+            <div class="categoriesLogos"> <!--card-->
+              <a href="">
+                <img src="./assets/images/breakfastLogo.jpg" class="imgLogo" alt="breakfast logo">
+                <h4 class="categoriesSubtitle">Breakfast</h4>
+              </a>
+            </div>
+            <div class="categoriesLogos"> <!--card-->
+              <a href="">
+                <img src="./assets/images/dessertsLogo.jpg" class="imgLogo" alt="desserts logo">
+                <h4 class="categoriesSubtitle">Desserts</h4>
+              </a>
+            </div>
+            <div class="categoriesLogos"> <!--card-->
+              <a href="">          
+                <img src="./assets/images/pastaLogo.jpg" class="imgLogo" alt="pasta logo">  
+                <h4 class="categoriesSubtitle">Pasta</h4>
+              </a>
+            </div>
+            <div class="categoriesLogos"> <!--card-->
+              <a href="">
+                <img src="./assets/images/pizzaLogo.jpg" class="imgLogo" alt="pizza logo">
+                <h4 class="categoriesSubtitle">Pizza</h4>
+              </a>
+            </div>
+            <div class="categoriesLogos">
+              <a href="">
+                <img src="./assets/images/veganLogo.jpg" class="imgLogo" alt="vegan logo">
+                <h4 class="categoriesSubtitle">Vegan</h4>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
     </section>
-
     <!--Categories End-->
     <!-- All recipes preview start -->
     <section class="recipesPreview">
@@ -68,45 +73,43 @@
               <button class="primaryButton" routerLink="/all-recipes">See all recipes</button>
             </div>
           </div>
+          <div class="navigationButtonLeft">
+            <button class="prevButtonPrew"><</button>
+          </div>
+          <div class="navigationButtonRight">
+            <button class="nextButtonPrew">></button>
+          </div>
             <div class="recipesGrid">
-            <div class="row row-cols-1 row-cols-md-3">
-                <div class="col mb-4">
-                  <div class="card h-100">
+            <div class="row">
+                  <div class="card h-100 w-25">
                     <img src="./assets/images/recipe-1.jpg" class="card-img-top" alt="recipe image 1">
                     <div class="card-body">
                       <h5 class="card-title">Salmon in Creamy Tomato Sauce</h5>
                       <a class="card-text" routerLink="/detailed-recipe">View Recipe</a>
                     </div>
                   </div>
-                </div>
-                <div class="col mb-4">
-                  <div class="card h-100">
+                  <div class="card h-100 w-25">
                     <img src="./assets/images/recipe-2.jpg" class="card-img-top" alt="recipe image 2">
                     <div class="card-body">
                       <h5 class="card-title">Blueberry Pancake</h5>
-                      <a class="card-text" routerLink="/detailed-recipe">View Recipe</a> <!-- Go spesific recipe detail page after backend -->
+                      <a class="card-text" routerLink="/detailed-recipe">View Recipe</a> 
                     </div>
                   </div>
-                </div>
-                <div class="col mb-4">
-                  <div class="card h-100">
+                  <div class="card h-100w-25">
                     <img src="./assets/images/recipe-3.jpg" class="card-img-top" alt="recipe image 3">
                     <div class="card-body">
                       <h5 class="card-title">Brownie</h5>
                       <a class="card-text" routerLink="/detailed-recipe">View Recipe</a>
                     </div>
                   </div>
-                </div>
-                <div class="col mb-4">
                   <div class="card h-100">
                     <img src="./assets/images/recipe-4.jpg" class="card-img-top" alt="recipe image 4">
                     <div class="card-body">
                       <h5 class="card-title">Pizza</h5>
                       <a class="card-text" routerLink="/detailed-recipe">View Recipe</a>
                     </div>
-                  </div>
+                  </div> 
                 </div>
-              </div>
             </div>
             <div class="allRecipeButtonMobile">
               <button class="primaryButton" routerLink="/all-recipes">See all recipes</button>
