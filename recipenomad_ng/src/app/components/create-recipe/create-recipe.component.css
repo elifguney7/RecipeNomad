@@ -3,6 +3,7 @@
     display: flex;
     align-items: start;
     justify-content: center;
+    min-height: 75vh;
     height: auto;
 }
 .createRecipeBannerContent {
@@ -57,11 +58,29 @@
     border: 2px solid black;
     border-radius: 0.75rem;
 }
-
 .galleryContainer {
     display: none;
     flex-direction: column;
     width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+.galleryContainer label,
+.webcamTextContainer label {
+    font-weight: 600;
+    color:var(--dark);
+    font-size: 28px;
+    width: 100%;
+    margin-top: 2rem;
+}
+.galleryContainer h3 {
+    font-weight: normal;
+    color:var(--dark);
+    font-size: 24px;
+}
+.galleryContainer input  {
+    background-color: #fff;
+    font-size: 18px;
 }
 .mediaContainer label {
     font-size: 24px;
@@ -71,10 +90,7 @@
     flex-direction: row;
     width: 100%;
     height: auto;
-}
-.uploadedMedia {
-
-    
+    overflow-x: scroll;
 }
 .uploadedMedia img {
     max-width: 300px;

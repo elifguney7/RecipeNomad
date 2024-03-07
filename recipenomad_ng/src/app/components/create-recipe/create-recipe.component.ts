@@ -15,24 +15,30 @@ export class CreateRecipeComponent implements OnInit {
 
 
   showGallery() {
-    const selectionDiv = this.elRef.nativeElement.querySelector('.selection');
+    const selectionDiv1 = this.elRef.nativeElement.querySelector('.selection');
+    const selectionDiv2 = this.elRef.nativeElement.querySelector('.selectionDiv');
     const galleryContainer = this.elRef.nativeElement.querySelector('.galleryContainer');
-    this.renderer.setStyle(selectionDiv, 'display', 'none');
+    this.renderer.setStyle(selectionDiv1, 'display', 'none');
+    this.renderer.setStyle(selectionDiv2, 'display', 'none');
     this.renderer.setStyle(galleryContainer, 'display', 'flex');
   }
 
   showCamera() {
-    const selectionDiv = this.elRef.nativeElement.querySelector('.selection');
+    const selectionDiv1 = this.elRef.nativeElement.querySelector('.selection');
+    const selectionDiv2 = this.elRef.nativeElement.querySelector('.selectionDiv');
     const cameraContainer = this.elRef.nativeElement.querySelector('.cameraContainer');
-    this.renderer.setStyle(selectionDiv, 'display', 'none');
+    this.renderer.setStyle(selectionDiv1, 'display', 'none');
+    this.renderer.setStyle(selectionDiv2, 'display', 'none');
     this.renderer.setStyle(cameraContainer, 'display', 'flex');
   }
 
   backSelection() {
-    const selectionDiv = this.elRef.nativeElement.querySelector('.selection');
+    const selectionDiv1 = this.elRef.nativeElement.querySelector('.selection');
+    const selectionDiv2 = this.elRef.nativeElement.querySelector('.selectionDiv');
     const galleryContainer = this.elRef.nativeElement.querySelector('.galleryContainer');
     const cameraContainer = this.elRef.nativeElement.querySelector('.cameraContainer');
-    this.renderer.setStyle(selectionDiv, 'display', 'flex');
+    this.renderer.setStyle(selectionDiv1, 'display', 'flex');
+    this.renderer.setStyle(selectionDiv2, 'display', 'flex');
     this.renderer.setStyle(cameraContainer, 'display', 'none');
     this.renderer.setStyle(galleryContainer, 'display', 'none');
   }
