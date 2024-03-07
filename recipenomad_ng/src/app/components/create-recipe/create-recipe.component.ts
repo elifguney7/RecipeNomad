@@ -11,36 +11,63 @@ export class CreateRecipeComponent implements OnInit {
 
   deviceFiles: File[] = [];
 
+  recipe = {
+    name: '',
+    ingredients: '',
+    instructions: ''
+  };
+
   constructor(private elRef: ElementRef, private renderer: Renderer2) {}
 
 
   showGallery() {
-    const selectionDiv1 = this.elRef.nativeElement.querySelector('.selection');
-    const selectionDiv2 = this.elRef.nativeElement.querySelector('.selectionDiv');
+    const selectionDiv = this.elRef.nativeElement.querySelector('.selection');
+    const infoDiv = this.elRef.nativeElement.querySelector('.infoDiv');
     const galleryContainer = this.elRef.nativeElement.querySelector('.galleryContainer');
-    this.renderer.setStyle(selectionDiv1, 'display', 'none');
-    this.renderer.setStyle(selectionDiv2, 'display', 'none');
+    this.renderer.setStyle(selectionDiv, 'display', 'none');
+    this.renderer.setStyle(infoDiv, 'display', 'none');
     this.renderer.setStyle(galleryContainer, 'display', 'flex');
   }
 
   showCamera() {
-    const selectionDiv1 = this.elRef.nativeElement.querySelector('.selection');
-    const selectionDiv2 = this.elRef.nativeElement.querySelector('.selectionDiv');
+    const selectionDiv = this.elRef.nativeElement.querySelector('.selection');
+    const infoDiv = this.elRef.nativeElement.querySelector('.infoDiv');
     const cameraContainer = this.elRef.nativeElement.querySelector('.cameraContainer');
-    this.renderer.setStyle(selectionDiv1, 'display', 'none');
-    this.renderer.setStyle(selectionDiv2, 'display', 'none');
+    this.renderer.setStyle(selectionDiv, 'display', 'none');
+    this.renderer.setStyle(infoDiv, 'display', 'none');
     this.renderer.setStyle(cameraContainer, 'display', 'flex');
   }
 
   backSelection() {
-    const selectionDiv1 = this.elRef.nativeElement.querySelector('.selection');
-    const selectionDiv2 = this.elRef.nativeElement.querySelector('.selectionDiv');
+    const selectionDiv = this.elRef.nativeElement.querySelector('.selection');
+    const infoDiv = this.elRef.nativeElement.querySelector('.infoDiv');
     const galleryContainer = this.elRef.nativeElement.querySelector('.galleryContainer');
     const cameraContainer = this.elRef.nativeElement.querySelector('.cameraContainer');
-    this.renderer.setStyle(selectionDiv1, 'display', 'flex');
-    this.renderer.setStyle(selectionDiv2, 'display', 'flex');
+    this.renderer.setStyle(selectionDiv, 'display', 'flex');
+    this.renderer.setStyle(infoDiv, 'display', 'flex');
     this.renderer.setStyle(cameraContainer, 'display', 'none');
     this.renderer.setStyle(galleryContainer, 'display', 'none');
+  }
+
+  nextSelection() {
+    const mediaContainer = this.elRef.nativeElement.querySelector('.stepOne');
+    const textContainer = this.elRef.nativeElement.querySelector('.stepTwo');
+    this.renderer.setStyle(mediaContainer, 'display', 'none');
+    this.renderer.setStyle(textContainer, 'display', 'flex');
+  }
+
+  backToMedia(){
+    const mediaContainer = this.elRef.nativeElement.querySelector('.stepOne');
+    const textContainer = this.elRef.nativeElement.querySelector('.stepTwo');
+    this.renderer.setStyle(mediaContainer, 'display', 'flex');
+    this.renderer.setStyle(textContainer, 'display', 'none');
+  }
+
+  submitRecipeForm() {
+    // You can handle form submission here, e.g., send data to backend or perform further processing
+    console.log('Submitted Recipe:', this.recipe);
+    // You can also reset the form after submission if needed
+    // this.recipe = { name: '', ingredients: '', instructions: '' };
   }
 
   handleDeviceUpload(event: any) {

@@ -6,36 +6,46 @@
     min-height: 75vh;
     height: auto;
 }
-.createRecipeBannerContent {
+.stepOne {
     display: flex;
     flex-direction: column;
     width: 80%;
     align-items: center;
     padding-top: 5rem;
 }
-.createRecipeBannerContent h2 {
+.stepTwo {
+    display: none;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    padding-top: 5rem;
+}
+.stepOne h2,
+.stepTwo h2 {
     font-weight:800;
     color:var(--dark);
     font-size: 42px;
     width: 100%;
 }
-.backButton {
+.navButton {
     display: flex;
     width: 100%;
     align-items: flex-start;
+    height: auto;
 }
-.backButton button {
+.navButton button {
     background-color: #fff;
+    height: 40px;
 }
-.backButton button:hover {
+.navButton button:hover {
     color: black;
 }
-.selectionDiv {
+.infoDiv {
     display: flex;
     width: 100%;
     margin-top: 2rem;
 }
-.selectionDiv p {
+.infoDiv p {
     font-size: 28px;
     font-weight: 600;
 }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { WebcamModule } from 'ngx-webcam';
 
 import { AppRoutingModule } from './routes';
@@ -12,7 +13,6 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { HomeComponent } from './components/home/home.component';
 import { DetailedRecipeComponent } from './components/detailed-recipe/detailed-recipe.component';
 import { AboutComponent } from './components/about/about.component';
-import { FormsModule } from '@angular/forms';
 import { TextUploadComponent } from './components/text-upload/text-upload.component';
 import { SuccesfullyCreatedComponent } from './components/succesfully-created/succesfully-created.component';
 
