@@ -1,0 +1,113 @@
+/* Create Recipes page */
+.createRecipeBanner {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    height: auto;
+}
+.createRecipeBannerContent {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    padding-top: 5rem;
+}
+.createRecipeBannerContent h2 {
+    font-weight:800;
+    color:var(--dark);
+    font-size: 42px;
+    width: 100%;
+}
+.backButton {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+}
+.backButton button {
+    background-color: #fff;
+}
+.backButton button:hover {
+    color: black;
+}
+.selectionDiv {
+    display: flex;
+    width: 100%;
+    margin-top: 2rem;
+}
+.selectionDiv p {
+    font-size: 28px;
+    font-weight: 600;
+}
+.selection {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    margin-bottom: 5rem;
+}
+.galleryButton, 
+.cameraButton {
+    background-color: black;
+    color: #fff;
+    font-size: 36px;
+    height: 50vh;
+    width: 50vw;
+    margin-right: 1rem;
+    outline: none;
+    border: 2px solid black;
+    border-radius: 0.75rem;
+}
+
+.galleryContainer {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+}
+.mediaContainer label {
+    font-size: 24px;
+}
+.uploadContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+}
+.uploadedMedia {
+
+    
+}
+.uploadedMedia img {
+    max-width: 300px;
+    margin-right: 1rem;
+}
+.cameraContainer {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+}
+.webcamTextContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 2rem;
+}
+.webcamButtons {
+    display: flex;
+    flex-direction: row;
+}
+.webcamButtons button {
+    background-color: black;
+    color: #fff;
+    font-size: 16px;
+    padding: 1rem;
+    margin-right: 1rem;
+    outline: none;
+    border: none;
+    border-radius: 0.75rem;
+}
+.snapshot {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+}
