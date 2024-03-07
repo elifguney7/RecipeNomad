@@ -13,8 +13,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { HomeComponent } from './components/home/home.component';
 import { DetailedRecipeComponent } from './components/detailed-recipe/detailed-recipe.component';
 import { AboutComponent } from './components/about/about.component';
-import { TextUploadComponent } from './components/text-upload/text-upload.component';
-import { SuccesfullyCreatedComponent } from './components/succesfully-created/succesfully-created.component';
+
 
 @NgModule({
   declarations: [
@@ -27,8 +26,7 @@ import { SuccesfullyCreatedComponent } from './components/succesfully-created/su
     HomeComponent,
     DetailedRecipeComponent,
     AboutComponent,
-    TextUploadComponent,
-    SuccesfullyCreatedComponent
+
   ],
   imports: [
     BrowserModule,
