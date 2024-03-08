@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { WebcamModule } from 'ngx-webcam';
 
 import { AppRoutingModule } from './routes';
 import { AppComponent } from './app.component';
@@ -12,6 +14,7 @@ import { HomeComponent } from './components/home/home.component';
 import { DetailedRecipeComponent } from './components/detailed-recipe/detailed-recipe.component';
 import { AboutComponent } from './components/about/about.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,11 +25,14 @@ import { AboutComponent } from './components/about/about.component';
     ProfileComponent,
     HomeComponent,
     DetailedRecipeComponent,
-    AboutComponent
+    AboutComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    WebcamModule
   ],
   providers: [],
   bootstrap: [AppComponent]

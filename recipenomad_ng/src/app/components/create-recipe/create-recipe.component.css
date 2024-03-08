@@ -1,0 +1,208 @@
+/* Create Recipes page */
+.createRecipeBanner {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    min-height: 75vh;
+    height: auto;
+}
+.stepOne {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    padding-top: 5rem;
+}
+.stepTwo {
+    display: none;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    padding-top: 5rem;
+}
+.stepThree {
+    display: none;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    padding-top: 5rem;
+}
+.stepOne h2,
+.stepTwo h2,
+.stepThree h2 {
+    font-weight:800;
+    color:var(--dark);
+    font-size: 42px;
+    width: 100%;
+}
+.recipeNavButton {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    height: auto;
+    margin: 0;
+}
+.recipeNavButton button {
+    background-color: #fff;
+    height: 40px;
+}
+.recipeNavButton button:hover {
+    color: black;
+}
+.infoDiv {
+    display: flex;
+    width: 100%;
+    margin-top: 2rem;
+}
+.infoDiv p {
+    font-size: 28px;
+    font-weight: 600;
+}
+.selection {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    margin-bottom: 5rem;
+}
+.galleryButton, 
+.cameraButton {
+    background-color: black;
+    color: #fff;
+    font-size: 36px;
+    height: 50vh;
+    width: 50vw;
+    margin-right: 1rem;
+    outline: none;
+    border: 2px solid black;
+    border-radius: 0.75rem;
+}
+.galleryContainer {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+.galleryContainer label,
+.webcamTextContainer label {
+    font-weight: 600;
+    color:var(--dark);
+    font-size: 28px;
+    width: 100%;
+    margin-top: 2rem;
+}
+.galleryContainer h3 {
+    font-weight: normal;
+    color:var(--dark);
+    font-size: 24px;
+}
+.galleryContainer input  {
+    background-color: #fff;
+    font-size: 18px;
+}
+.mediaContainer label {
+    font-size: 24px;
+}
+.uploadContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    overflow-x: scroll;
+}
+.uploadedMedia img {
+    max-width: 300px;
+    margin-right: 1rem;
+}
+.cameraContainer {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+}
+.webcamTextContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 2rem;
+}
+.webcamButtons {
+    display: flex;
+    flex-direction: row;
+}
+.webcamButtons button {
+    background-color: black;
+    color: #fff;
+    font-size: 16px;
+    padding: 1rem;
+    margin-right: 1rem;
+    outline: none;
+    border: none;
+    border-radius: 0.75rem;
+}
+.snapshot {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+}
+.recipeForm {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+.recipeForm label {
+    width: 100%;
+    font-size: 16px;
+}
+.recipeForm input {
+    width: 100%;
+    padding: 12px 20px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+.recipeForm textarea {
+    width: 100%;
+    min-height: 125px;
+    height: auto;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    resize: none;
+    margin-bottom: 1rem;
+}
+.recipeForm button[type=submit] {
+    background-color: #fff;
+    border: 2px solid black;
+    border-radius: 0.75rem;
+    color: black;
+    width: 125px;
+    height: 40px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.stepThreeContainer {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+.stepThreeContainer p {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 0;
+    margin-top: 2rem;
+}
+.stepThreeButton {
+    background-color: black;
+    color: #fff;
+    font-size: 18px;
+    width: 50%;
+    padding: 1rem;
+    outline: none;
+    border: none;
+    border-radius: 0.75rem;
+    margin-top: 1rem;
+}
