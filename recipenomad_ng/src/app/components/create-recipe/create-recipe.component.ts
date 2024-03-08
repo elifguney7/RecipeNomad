@@ -21,17 +21,22 @@ export class CreateRecipeComponent implements OnInit {
   showGallery() {
     const selectionDiv = this.elRef.nativeElement.querySelector('.selection');
     const infoDiv = this.elRef.nativeElement.querySelector('.infoDiv');
+    const cameraContainer = this.elRef.nativeElement.querySelector('.cameraContainer');
     const galleryContainer = this.elRef.nativeElement.querySelector('.galleryContainer');
     this.renderer.setStyle(selectionDiv, 'display', 'none');
     this.renderer.setStyle(infoDiv, 'display', 'none');
+    this.renderer.setStyle(cameraContainer, 'display', 'none');
     this.renderer.setStyle(galleryContainer, 'display', 'flex');
   }
   showCamera() {
     const selectionDiv = this.elRef.nativeElement.querySelector('.selection');
     const infoDiv = this.elRef.nativeElement.querySelector('.infoDiv');
     const cameraContainer = this.elRef.nativeElement.querySelector('.cameraContainer');
+    const galleryContainer = this.elRef.nativeElement.querySelector('.galleryContainer');
+
     this.renderer.setStyle(selectionDiv, 'display', 'none');
     this.renderer.setStyle(infoDiv, 'display', 'none');
+    this.renderer.setStyle(galleryContainer, 'display', 'none');
     this.renderer.setStyle(cameraContainer, 'display', 'flex');
   }
 
