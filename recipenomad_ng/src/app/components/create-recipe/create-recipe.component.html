@@ -1,7 +1,7 @@
 <section class="createRecipeBanner">
     <div class="stepOne">
       <h2>Hi xx! Let's create your delicious recipe.</h2>
-      <div class="navButton">
+      <div class="recipeNavButton">
         <button class="secondaryButton" (click)="backSelection()">Back</button>
       </div>
       <div class="infoDiv">
@@ -34,7 +34,7 @@
         </div>     
           <!-- Text step button -->
         <div class="toTextUpload">
-          <div class="navButton">
+          <div class="recipeNavButton">
             <button class="secondaryButton" (click)="nextSelection()">Next</button>
           </div>
         </div>
@@ -64,18 +64,15 @@
         </div>
         <!-- Text step button -->
         <div class="toTextUpload">
-          <div class="navButton">
+          <div class="recipeNavButton">
             <button class="secondaryButton" (click)="nextSelection()">Next</button>
           </div>
         </div>
       </div>
-
-        
-       
     </div> 
     <div class="stepTwo">
       <h2>Hi xx! Let's create your delicious recipe.</h2>
-      <div class="navButton">
+      <div class="recipeNavButton">
         <button class="secondaryButton" (click)="backToMedia()">Back</button>
       </div>
       <div class="infoDiv">
@@ -86,7 +83,6 @@
           <div>
             <label for="recipeName">Recipe Name:</label>
             <input type="text" id="recipeName" name="recipeName" [(ngModel)]="recipe.name" required>
-            <p>{{recipe.name}}</p>
           </div>
         
           <div>
@@ -99,9 +95,20 @@
             <textarea id="instructions" name="instructions" [(ngModel)]="recipe.instructions" required></textarea>
           </div>
         
-          <button type="submit">Submit</button>
+          <button type="submit" (click)="succesfullyCreated()">Next</button>
         </form>
         
+      </div>
+    </div>
+    <div class="stepThree">
+      <h2>Hi xx! Your delicious recipe was created.</h2>      
+      <div class="stepThreeContainer">
+        <p>You are ready to create new recipe.</p>
+        <button class="stepThreeButton" (click)="backtoStart()">Create New One</button>
+        <p>You can see created recipe in detail.</p>
+        <button class="stepThreeButton" routerLink="/detailed-recipe">See Created Recipe</button> 
+        <p>You can see all of your recipes.</p>
+        <button class="stepThreeButton" routerLink="/all-recipes">See All Recipes</button> 
       </div>
     </div>
 </section>

@@ -20,24 +20,33 @@
     align-items: center;
     padding-top: 5rem;
 }
+.stepThree {
+    display: none;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    padding-top: 5rem;
+}
 .stepOne h2,
-.stepTwo h2 {
+.stepTwo h2,
+.stepThree h2 {
     font-weight:800;
     color:var(--dark);
     font-size: 42px;
     width: 100%;
 }
-.navButton {
+.recipeNavButton {
     display: flex;
     width: 100%;
     align-items: flex-start;
     height: auto;
+    margin: 0;
 }
-.navButton button {
+.recipeNavButton button {
     background-color: #fff;
     height: 40px;
 }
-.navButton button:hover {
+.recipeNavButton button:hover {
     color: black;
 }
 .infoDiv {
@@ -136,4 +145,64 @@
     flex-direction: column;
     width: 100%;
     height: auto;
+}
+.recipeForm {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+.recipeForm label {
+    width: 100%;
+    font-size: 16px;
+}
+.recipeForm input {
+    width: 100%;
+    padding: 12px 20px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+.recipeForm textarea {
+    width: 100%;
+    min-height: 125px;
+    height: auto;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    resize: none;
+    margin-bottom: 1rem;
+}
+.recipeForm button[type=submit] {
+    background-color: #fff;
+    border: 2px solid black;
+    border-radius: 0.75rem;
+    color: black;
+    width: 125px;
+    height: 40px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.stepThreeContainer {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+.stepThreeContainer p {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 0;
+    margin-top: 2rem;
+}
+.stepThreeButton {
+    background-color: black;
+    color: #fff;
+    font-size: 18px;
+    width: 50%;
+    padding: 1rem;
+    outline: none;
+    border: none;
+    border-radius: 0.75rem;
+    margin-top: 1rem;
 }

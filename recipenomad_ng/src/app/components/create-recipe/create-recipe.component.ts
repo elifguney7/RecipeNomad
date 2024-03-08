@@ -18,8 +18,6 @@ export class CreateRecipeComponent implements OnInit {
   };
 
   constructor(private elRef: ElementRef, private renderer: Renderer2) {}
-
-
   showGallery() {
     const selectionDiv = this.elRef.nativeElement.querySelector('.selection');
     const infoDiv = this.elRef.nativeElement.querySelector('.infoDiv');
@@ -28,7 +26,6 @@ export class CreateRecipeComponent implements OnInit {
     this.renderer.setStyle(infoDiv, 'display', 'none');
     this.renderer.setStyle(galleryContainer, 'display', 'flex');
   }
-
   showCamera() {
     const selectionDiv = this.elRef.nativeElement.querySelector('.selection');
     const infoDiv = this.elRef.nativeElement.querySelector('.infoDiv');
@@ -45,22 +42,25 @@ export class CreateRecipeComponent implements OnInit {
     const cameraContainer = this.elRef.nativeElement.querySelector('.cameraContainer');
     this.renderer.setStyle(selectionDiv, 'display', 'flex');
     this.renderer.setStyle(infoDiv, 'display', 'flex');
-    this.renderer.setStyle(cameraContainer, 'display', 'none');
-    this.renderer.setStyle(galleryContainer, 'display', 'none');
+    this.renderer.setStyle(cameraContainer, 'display', 'none');  
   }
 
   nextSelection() {
     const mediaContainer = this.elRef.nativeElement.querySelector('.stepOne');
     const textContainer = this.elRef.nativeElement.querySelector('.stepTwo');
+    const lastStep = this.elRef.nativeElement.querySelector('.stepThree');
     this.renderer.setStyle(mediaContainer, 'display', 'none');
     this.renderer.setStyle(textContainer, 'display', 'flex');
+    this.renderer.setStyle(lastStep, 'display', 'none');
   }
 
   backToMedia(){
     const mediaContainer = this.elRef.nativeElement.querySelector('.stepOne');
     const textContainer = this.elRef.nativeElement.querySelector('.stepTwo');
+    const lastStep = this.elRef.nativeElement.querySelector('.stepThree');
     this.renderer.setStyle(mediaContainer, 'display', 'flex');
     this.renderer.setStyle(textContainer, 'display', 'none');
+    this.renderer.setStyle(lastStep, 'display', 'none');
   }
 
   submitRecipeForm() {
@@ -68,6 +68,26 @@ export class CreateRecipeComponent implements OnInit {
     console.log('Submitted Recipe:', this.recipe);
     // You can also reset the form after submission if needed
     // this.recipe = { name: '', ingredients: '', instructions: '' };
+  }
+  succesfullyCreated() {
+    const textContainer = this.elRef.nativeElement.querySelector('.stepTwo');
+    const lastStep = this.elRef.nativeElement.querySelector('.stepThree');
+    this.renderer.setStyle(textContainer, 'display', 'none');
+    this.renderer.setStyle(lastStep, 'display', 'flex');
+  }
+  backtoStart() {
+    const mediaContainer = this.elRef.nativeElement.querySelector('.stepOne');
+    const selectionDiv = this.elRef.nativeElement.querySelector('.selection');
+    const infoDiv = this.elRef.nativeElement.querySelector('.infoDiv');
+    const cameraContainer = this.elRef.nativeElement.querySelector('.cameraContainer');
+    const galleryContainer = this.elRef.nativeElement.querySelector('.galleryContainer');
+    const lastStep = this.elRef.nativeElement.querySelector('.stepThree');
+    this.renderer.setStyle(cameraContainer, 'display', 'none');
+    this.renderer.setStyle(galleryContainer, 'display', 'none');
+    this.renderer.setStyle(mediaContainer, 'display', 'flex');
+    this.renderer.setStyle(selectionDiv, 'display', 'flex');
+    this.renderer.setStyle(infoDiv, 'display', 'flex');
+    this.renderer.setStyle(lastStep, 'display', 'none');
   }
 
   handleDeviceUpload(event: any) {
