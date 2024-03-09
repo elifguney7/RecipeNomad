@@ -76,9 +76,14 @@ section{
     position: fixed;
     width: 100%;
     z-index: 999;
+    overflow-x: hidden;
 }
 .logo{
     padding-left: 120px;
+    max-width: 30%;
+}
+.logo img {
+    width: 70%;
 }
 .nav{
     display: flex;
@@ -1230,6 +1235,10 @@ span p {
     }
     .logo{
         padding-left: 20px;
+        width: 60%;
+    }
+    .logo img {
+        min-width: 250px;
     }
     .nav{
         display:none
