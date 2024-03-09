@@ -69,7 +69,7 @@ section{
 /*Header Styles */
 .header{
     display: flex;
-    background-color: var(--white);
+    background-color: #fcfcfc;
     height:105px;
     align-items: center;
     justify-content: space-between;
@@ -392,7 +392,7 @@ section{
     transition: all 1s ease-in-out;
     margin-bottom: 2rem;
 }
-.card {
+.recipesGrid .card {
     border: none !important;
     -webkit-box-shadow: -12px 12px 10px -3px rgba(94, 94, 94, 0.3);
     -moz-box-shadow: -12px 12px 10px -3px rgba(60, 60, 60, 0.3);
@@ -402,7 +402,7 @@ section{
     width: calc(25% - 20px); /* Adjust width to fit four cards per row with margins */
     margin-left: 40px;
 }
-.card-title {
+.recipesGrid .card-title {
     font-size: 16px; /* Adjust font size as needed */
   display: -webkit-box;
   -webkit-line-clamp: 2; /* Limit the number of lines to 2 */
@@ -515,10 +515,10 @@ footer{
     display: flex;
     padding-top:40px;
     flex-direction: column;
+    background-color: #fcfcfc;
 }
 footer .top{
     min-height:150px;
-    background-color: var(--white);
     padding-left:120px;
     padding-right: 120px;
     display: flex;
@@ -694,6 +694,17 @@ span p {
 .detailRecipeButton:hover svg path{
     fill: #fff !important;
 } 
+.recipesGridAll {
+    width: 100%;
+}
+.recipesGridAll .card {
+    border: none !important;
+    -webkit-box-shadow: -12px 12px 10px -3px rgba(94, 94, 94, 0.3);
+    -moz-box-shadow: -12px 12px 10px -3px rgba(60, 60, 60, 0.3);
+    box-shadow: -12px 12px 10px -3px rgba(59, 59, 59, 0.3);
+    border-radius: 0.75rem !important;
+    flex: 0 0 auto;
+}
 .allRecipesContainer {
     display: flex;
     flex-direction: column;
