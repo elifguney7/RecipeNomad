@@ -7,6 +7,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { HomeComponent } from './components/home/home.component';
 import { DetailedRecipeComponent } from './components/detailed-recipe/detailed-recipe.component';
 import { AboutComponent } from './components/about/about.component';
+import { SignInComponent } from './components/sign-in/sign-in.component'
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 const routes: Routes = [
 
@@ -16,6 +18,8 @@ const routes: Routes = [
     { path: "home", component: HomeComponent },
     { path: "detailed-recipe", component: DetailedRecipeComponent },
     { path: "about", component: AboutComponent },
+    { path: "sign-in", component: SignInComponent},
+    { path: "sign-up", component: SignUpComponent},
 
 
     { path: '', redirectTo: "home", pathMatch: "full" },

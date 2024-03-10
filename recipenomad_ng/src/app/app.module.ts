@@ -13,6 +13,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { HomeComponent } from './components/home/home.component';
 import { DetailedRecipeComponent } from './components/detailed-recipe/detailed-recipe.component';
 import { AboutComponent } from './components/about/about.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 
 @NgModule({
@@ -26,6 +28,8 @@ import { AboutComponent } from './components/about/about.component';
     HomeComponent,
     DetailedRecipeComponent,
     AboutComponent,
+    SignInComponent,
+    SignUpComponent,
 
   ],
   imports: [
