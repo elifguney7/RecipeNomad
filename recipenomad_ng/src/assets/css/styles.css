@@ -1734,13 +1734,22 @@ span p {
         margin-top: 0.5rem;
     }
     /* about mobile styling */
+    .photoAndDesc {
+        padding-top: 10px;
+    }
+    .photoAndDesc p {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    .photoAndDesc img {
+        margin-bottom: 1rem;
+    }
     .memberCategories{
         display: flex;
         flex-direction: column;
         width: 100%;
         align-items: center;
-        padding-left: 20px;
-        padding-right: 20px;
+        width: 80%;
     }
     .memberCategories h2 {
         text-align: left;
