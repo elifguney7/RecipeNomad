@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { WebcamModule } from 'ngx-webcam';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './routes';
 import { AppComponent } from './app.component';
@@ -36,7 +37,8 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    WebcamModule
+    WebcamModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
