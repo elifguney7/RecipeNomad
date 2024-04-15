@@ -83,7 +83,7 @@ section{
     max-width: 30%;
 }
 .logo img {
-    width: 70%;
+    width: 60%;
 }
 .nav{
     display: flex;
@@ -420,6 +420,7 @@ section{
     flex: 0 0 auto;
     width: calc(25% - 20px); /* Adjust width to fit four cards per row with margins */
     margin-left: 40px;
+    flex-direction: column;
 }
 .recipesGrid .card-title {
     font-size: 16px; /* Adjust font size as needed */
