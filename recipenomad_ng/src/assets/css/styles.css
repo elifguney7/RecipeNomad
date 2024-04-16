@@ -8,8 +8,8 @@
     Detailed Recipe Page 
     Profile Page
     Create Recipes page 
+    Signup Styling
     mobile styling 
-        Detailed Recipe Page Mobile 
 */
 
 @import url('fonts.css');
@@ -1331,6 +1331,191 @@ span p {
 .memberSection {
     justify-content: center;
 }
+/* Signup Styling */
+/* Spacer */
+.spacer {
+    height: 125px; /* Adjust height as needed */
+    width: 100%;
+    box-sizing: border-box;
+}
+/* Container for the content */
+.signup-wrapper {
+    height: 60%;
+    display: flex;
+    align-items: center;
+}
+/* Center the sub-main section */
+.sub-main {
+    max-width: 400px; /* Adjust according to your preference */
+    padding: 50px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    margin: auto;
+    text-align: center;
+}
+.sub-main h2{
+    font-size: 28px;
+}
+.login {
+    margin-top: 20px; /* Add space between navbar and form */
+}
+  /* Style the input fields */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+  /* Style the submit button */
+  input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #000000; /* Add desired button color */
+    color: #fff;
+    cursor: pointer;
+}
+/* signin styling */
+
+.sign-in-wrapper h1,
+.overlay-panel h1 {
+	font-size: 42px;
+	font-weight: bold;
+	margin: 0;
+}
+.overlay-panel h1 {
+	color: #fff;
+}
+.overlay-panel p {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 20px;
+	letter-spacing: 0.5px;
+	margin: 20px 0 30px;
+}
+.sign-in-container button {
+	border-radius: 20px;
+	background-color: #fff;
+	color: black;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;	
+	border: 2px solid black;
+}
+.sign-in-wrapper span {
+	font-size: 12px;
+	margin-bottom: 10px;
+}
+.sign-in-wrapper a {
+	color: #333;
+	font-size: 14px;
+	text-decoration: none;
+	margin: 15px 0;
+}
+.overlay-panel button {
+	background: #333;
+	border: solid #404c5d 1px;
+	font-size: 12px;
+	color: rgb(229, 229, 229);
+	-webkit-transition: 500ms;
+	transition: 500ms;
+	background: linear-gradient(145deg, #2e2d2d, #212121);
+	-webkit-box-shadow: -1px -5px 15px #41465b, 5px 5px 15px #41465b,
+	  inset 5px 5px 10px #212121, inset -5px -5px 15px #212121;
+	box-shadow: -1px -5px 15px #41465b, 5px 5px 15px #41465b,
+	  inset 5px 5px 10px #212121, inset -5px -5px 15px #212121;
+}
+.overlay-panel button:hover {
+	-webkit-box-shadow: 1px 1px 13px #20232e, -1px -1px 13px #545b78;
+	box-shadow: 1px 1px 13px #20232e, -1px -1px 13px #545b78;
+	color: #d6d6d6;
+	-webkit-transition: 500ms;
+	transition: 500ms;
+}
+.overlay-panel button:active {
+	-webkit-box-shadow: 1px 1px 13px #20232e, -1px -1px 33px #545b78;
+	box-shadow: 1px 1px 13px #20232e, -1px -1px 33px #545b78;
+	color: #d6d6d6;
+	-webkit-transition: 100ms;
+	transition: 100ms;
+}
+.sign-in-container form {
+	background-color: #FFFFFF;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 50px;
+	height: 100%;
+	text-align: center;
+}
+.sign-in-input-fields{
+	margin-bottom: 1rem;
+}
+.sign-in-container input {
+	background-color: #ffffff;
+	border: 1.5px solid rgb(37, 37, 37);
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 100%;
+}
+.sign-in-container {
+	background-color: #fff;
+	border-radius: 10px;
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25),
+			0 10px 10px rgba(0,0,0,0.22);
+	display: flex;
+	overflow: hidden;
+	width: 50%;
+	min-height: 60%;
+	margin-right: auto;
+    margin-left: auto;
+	margin-bottom: 2rem;
+	margin-top: 2rem;
+}
+.sign-in-wrapper {
+	width: 50%;
+}
+.overlay-container {
+	width: 50%;
+	overflow: hidden;
+}
+.overlay-panel {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 40px;
+	text-align: center;
+	height: 100%;
+	width: 100%;
+	background-color: black;
+    color: white;
+}
+.social-container {
+	margin: 20px 0;
+}
+.social-container a {
+	border: 1.5px solid black;
+	border-radius: 50%;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 5px;
+	height: 40px;
+	width: 40px;
+	background: #fff;
+}
+
 /* mobile styling */
 @media (max-width:975px){
     section{
@@ -1777,6 +1962,56 @@ span p {
         display: flex;
         font-size: 16px;
         margin-left: 1rem;
+    }
+    /* signup mobile styling */
+    .spacer {
+        height: 115px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .sub-main {
+        max-width: 90%; /* Adjust according to your preference */
+        padding: 30px;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+        margin: auto;
+        text-align: center;
+    }
+    .sub-main h2{
+        font-size: 28px;
+    }
+    /* sign-in mobile styling */
+    .sign-in-container {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        height: 85%;
+        margin-top: 0;
+        box-shadow: -15px 5px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    }
+    .sign-in-wrapper {
+        width: 100%;
+        height: 50%;
+    }
+    .sign-in-wrapper h1, .overlay-panel h1 {
+        font-size: 32px;
+        font-weight: bold;
+        margin: 0;
+    }
+    .social-container {
+        margin: 15px 0;
+    }
+    .sign-in-container input {
+        background-color: #ffffff;
+        border: 1.5px solid rgb(37, 37, 37);
+        padding: 8px 10px;
+        margin: 6px 0;
+        width: 100%;
+    }  
+    .overlay-container {
+        width: 100%;
+        height: 50%;
     }
     /* footer mobile styling*/
     footer {

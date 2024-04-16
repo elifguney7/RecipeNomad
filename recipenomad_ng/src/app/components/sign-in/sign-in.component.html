@@ -1,15 +1,8 @@
 <div class="spacer"></div>
-<div class="container" id="container">
+<div class="sign-in-container" id="container">
     <!-- Rest of the container content -->
-    <div class="form-container sign-in-container">
+    <div class="sign-in-wrapper">
       <form #signInForm="ngForm" (ngSubmit)="signIn(signInForm)">
-          <input type="email" [(ngModel)]="credentials.email" name="email" placeholder="Email" />
-          <input type="password" [(ngModel)]="credentials.password" name="password" placeholder="Password" />
-          <button>Sign In</button>
-      </form>
-    </div>
-    <!-- <div class="form-container sign-in-container">
-      <form action="#">
         <h1>Sign in</h1>
         <div class="social-container">
           <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -17,28 +10,21 @@
           <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
         </div>
         <span>or use your account</span>
-        <input type="email" placeholder="Email" />
-        <input type="password" placeholder="Password" />
-        <a href="#">Forgot your password?</a>
-      
+        <div class="sign-in-input-fields">
+          <input type="email" [(ngModel)]="credentials.email" name="email" placeholder="Email" />
+          <input type="password" [(ngModel)]="credentials.password" name="password" placeholder="Password" />
+        </div>         
         <button>Sign In</button>
       </form>
-    </div> -->
+    </div>
+
     <div class="overlay-container">
-      <div class="overlay">
-        <div class="overlay-panel overlay-left">
-          <h1>Welcome Back!</h1>
-          <p>To keep connected with us please login with your personal details</p>
-          <button class="ghost" id="signIn">Sign In</button>
-        </div>
-        <div class="overlay-panel overlay-right">
+        <div class="overlay-panel">
           <h1>Hi There!</h1>
           <p>Enter your personal details to open an account with us</p>
-          <button class="ghost" id="signUp" routerLink="/sign-up">
+          <button id="signUp" routerLink="/sign-up">
             Sign Up
-        </button>
+          </button>
         </div>
-      </div>
     </div>
-    
 </div>
