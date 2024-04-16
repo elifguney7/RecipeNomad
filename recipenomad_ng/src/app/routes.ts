@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from './auth/auth.guard.service';
 
 import { AllRecipesComponent } from './components/all-recipes/all-recipes.component';
 import { CreateRecipeComponent } from './components/create-recipe/create-recipe.component';
@@ -12,11 +13,11 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 const routes: Routes = [
 
-    { path: "all-recipes", component: AllRecipesComponent },
-    { path: "create-recipes", component: CreateRecipeComponent },
-    { path: "profile", component: ProfileComponent },
+    { path: "all-recipes", component: AllRecipesComponent, canActivate: [AuthGuard] },
+    { path: "create-recipes", component: CreateRecipeComponent, canActivate: [AuthGuard] },
+    { path: "profile", component: ProfileComponent, canActivate: [AuthGuard] },
     { path: "home", component: HomeComponent },
-    { path: "detailed-recipe", component: DetailedRecipeComponent },
+    { path: "detailed-recipe", component: DetailedRecipeComponent, canActivate: [AuthGuard] },
     { path: "about", component: AboutComponent },
     { path: "sign-in", component: SignInComponent},
     { path: "sign-up", component: SignUpComponent},
