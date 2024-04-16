@@ -422,6 +422,10 @@ section{
     margin-left: 40px;
     flex-direction: column;
 }
+.recipesGrid .card:hover {
+    transform: scale(1.03);
+    transition: transform 0.3s ease-in-out;
+}
 .recipesGrid .card-title {
     font-size: 16px; /* Adjust font size as needed */
   display: -webkit-box;
@@ -610,7 +614,6 @@ footer .bottom{
     display: flex;
     align-items: start;
     justify-content: center;
-    background-image: url('../images/bg.png');
     background-position: 100%;
     background-repeat: no-repeat;
     background-size: contain;
@@ -629,6 +632,14 @@ footer .bottom{
     text-align: left;
     padding-bottom: 1rem;
 }
+@keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.02);
+    }
+}
 .primaryCard {
     display: flex;
     flex-direction: row;
@@ -637,6 +648,7 @@ footer .bottom{
     background-color: rgb(255, 255, 255);
     border-radius: 0.75rem;
     border: 2px solid rgb(255, 199, 95);
+    animation: pulse 3s ease-in-out infinite;
 }
 .primaryCard .left {
     display: flex ;
@@ -724,6 +736,10 @@ span p {
     box-shadow: -12px 12px 10px -3px rgba(59, 59, 59, 0.3);
     border-radius: 0.75rem !important;
     flex: 0 0 auto;
+}
+.recipesGridAll .card:hover {
+    transform: scale(1.03);
+    transition: transform 0.3s ease-in-out;
 }
 .allRecipesContainer {
     display: flex;
