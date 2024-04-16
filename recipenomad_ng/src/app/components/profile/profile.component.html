@@ -16,18 +16,18 @@
         <form action="userInfoForm">
             <div class="userInfo">
                 <div>
-                    <label for="fullname">Full Name</label>
-                    <input type="text" id="fullname" name="fullname" placeholder="Name Surname" required>
+                    <label for="fullname">First Name</label>
+                    <input type="text" id="fullname" name="fullname" [(ngModel)]="user.firstName" placeholder="Name Surname" required>
                 </div>
                 <div>
-                    <label for="username">User Name</label>
-                    <input type="text" id="username" name="username" placeholder="Username" required>
+                    <label for="username">Last Name</label>
+                    <input type="text" id="username" name="username" [(ngModel)]="user.lastName" placeholder="Username" required>
                 </div>
             </div>
             <div class="userInfo">
                 <div>
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="user@recipenomad.com" required>
+                    <input type="email" id="email" name="email" [(ngModel)]="user.email" placeholder="user@recipenomad.com" required>
                 </div>
                 <div>
                     <label for="password">Password</label>
@@ -37,7 +37,7 @@
         </form>
 
         <div class="profileThirdLine">
-            <p>deneme deneme deneme</p>
+            
         </div>
         <div class="buttonContainer"> <!-- Yeni eklenen konteyner -->
             <button class="changePasswordButton">Change Password</button>
