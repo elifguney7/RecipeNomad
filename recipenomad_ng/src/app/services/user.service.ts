@@ -1,29 +1,3 @@
-// import { HttpClient } from '@angular/common/http';
-// import { Injectable } from '@angular/core';
-// import { Observable } from 'rxjs';
-
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class UserService {
-
-//   constructor(private http: HttpClient) { }
-
-//   private apiUrl = 'http://localhost:3000/users';
-
-//   createUser(user: any) {
-//     return this.http.post<any>('http://localhost:3000/users', user);
-//   }
-
-//   deleteUser(userId: string) {
-//     return this.http.delete<any>(`http://localhost:3000/users/${userId}`);
-//   }
-
-//   getUsers(): Observable<any[]> {
-//     return this.http.get<any[]>(this.apiUrl);
-//   }
-// }
-
 import { HttpClient, HttpHeaders  } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -44,13 +18,13 @@ export class UserService {
   loginUser(credentials: { email: string; password: string }): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/login`, credentials).pipe(
       tap((resp) => {
-        localStorage.setItem('token', resp.token); // Assuming the token is returned directly
+        localStorage.setItem('token', resp.token); 
       })
     );
   }
   
   getUserProfile(): Observable<any> {
-    // Retrieve token from localStorage or your preferred storage method
+    // Retrieve token from localStorage
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`

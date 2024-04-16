@@ -15,7 +15,7 @@ export class AuthGuard implements CanActivate {
       return true;
     } else {
       alert('Only logged in users can see this page!');
-      this.router.navigate(['/sign-in']); // Replace 'login' with your login page path
+      this.router.navigate(['/sign-in']); 
       return false;
     }
   }
