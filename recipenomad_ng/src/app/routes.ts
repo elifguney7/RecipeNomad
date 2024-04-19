@@ -13,7 +13,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 const routes: Routes = [
 
-    { path: "all-recipes", component: AllRecipesComponent, canActivate: [AuthGuard] },
+    { path: "all-recipes", component: AllRecipesComponent},
     { path: "create-recipes", component: CreateRecipeComponent, canActivate: [AuthGuard] },
     { path: "profile", component: ProfileComponent, canActivate: [AuthGuard] },
     { path: "home", component: HomeComponent },
