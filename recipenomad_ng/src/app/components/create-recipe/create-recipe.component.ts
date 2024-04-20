@@ -14,7 +14,7 @@ export class CreateRecipeComponent implements OnInit {
   deviceFiles: File[] = [];
 
   recipe = {
-    name: '',
+    title: '',
     ingredients: '',
     instructions: '',
     media: ''
@@ -78,7 +78,7 @@ export class CreateRecipeComponent implements OnInit {
       formData.append('media', file); // Directly append File objects
     });
 
-    formData.append('title', this.recipe.name);
+    formData.append('title', this.recipe.title);
     // formData.append('ingredients', JSON.stringify(this.recipe.ingredients));  // Assuming `ingredients` is an array of objects
     formData.append('ingredients', this.recipe.ingredients);
     formData.append('instructions', this.recipe.instructions);

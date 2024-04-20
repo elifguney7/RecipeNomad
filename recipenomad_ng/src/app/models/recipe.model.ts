@@ -1,14 +1,10 @@
 export interface Recipe {
-  name: string;
-  ingredients: Ingredient[];
+  title: string;
+  ingredients: string;
   media: Media[];
   instructions: string;
 }
 
-export interface Ingredient {
-  name: string;
-  quantity: string;
-}
 
 export interface Media {
   url: string;

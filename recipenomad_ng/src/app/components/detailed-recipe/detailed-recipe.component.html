@@ -1,4 +1,4 @@
-<section class="detailedRecipeMedia">
+<!-- <section class="detailedRecipeMedia">
     <div class="videoContainer">
         <h3>Pizza</h3>
        <video controls autoplay>
@@ -89,4 +89,36 @@
               </div>
             </div>
         </div>
+</section> -->
+
+
+<section class="detailedRecipeMedia">
+  <!-- Loop through all media items and display them -->
+  <div *ngFor="let mediaItem of recipe?.media">
+    <h3>{{ recipe?.title }}</h3>
+    <!-- Check if the media item is a video -->
+    <video *ngIf="mediaItem?.type?.startsWith('video')" controls autoplay>
+        <source [src]="getFullMediaUrl(mediaItem.url)" [type]="mediaItem?.type">
+        Your browser does not support the video tag.
+    </video>
+    <!-- Check if the media item is an image -->
+    <img *ngIf="mediaItem.type.startsWith('image')" [src]="getFullMediaUrl(mediaItem.url)" alt="{{ recipe?.title }}">
+  </div>
+</section>
+
+<section class="detailedRecipeInfo">
+  <div class="cardContainer">
+      <div class="ingredientCard">
+          <h3>Ingredient List</h3>
+          <ul>
+              <!-- Safely iterate over ingredients if they exist -->
+              <li>{{ recipe?.ingredients }}</li>
+          </ul>
+      </div>
+      <div class="instructionCard">
+          <h3>Instructions</h3>
+          <!-- Safely display instructions if they exist -->
+          <p>{{ recipe?.instructions }}</p>
+      </div>
+  </div>
 </section>
