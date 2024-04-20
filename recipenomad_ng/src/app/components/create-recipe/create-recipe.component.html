@@ -14,7 +14,7 @@
       
       <div class="galleryContainer">
         <label for="deviceUpload">Select from Device:</label><br>
-        <input type="file" accept="image/*, video/*" (change)="handleDeviceUpload($event)">
+        <input type="file" accept="image/*, video/*" multiple name="media" (change)="handleDeviceUpload($event)">
         <br><br>
         <div *ngIf="deviceFiles.length > 0">
           <h3>Files from Device:</h3>
@@ -60,7 +60,7 @@
         </div>
 
         <div class="snapshot" *ngIf="webcamImage">
-            <img [src]="webcamImage.imageAsDataUrl"/>
+          <img [src]="webcamImageUrl | async" *ngIf="webcamImageUrl | async">
         </div>
         <!-- Text step button -->
         <div class="toTextUpload">
