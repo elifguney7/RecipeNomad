@@ -19,6 +19,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 
 @NgModule({
+  
   declarations: [
     AppComponent,
     HeaderComponent,
@@ -38,8 +39,9 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
     AppRoutingModule,
     FormsModule,
     WebcamModule,
-    HttpClientModule
+    HttpClientModule,
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })
