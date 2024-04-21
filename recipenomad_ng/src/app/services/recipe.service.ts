@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders  } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Recipe } from '../models/recipe.model'; // Ensure the path to the model is correct
 
@@ -13,11 +13,19 @@ export class RecipeService {
   constructor(private http: HttpClient) { }
 
   createRecipe(formData: FormData): Observable<any> {
-    return this.http.post(`${this.apiUrl}`, formData);
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.post(`${this.apiUrl}`, formData, { headers });
   }
 
   getRecipes(): Observable<Recipe[]> {
-    return this.http.get<Recipe[]>(this.apiUrl);
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.get<Recipe[]>(this.apiUrl, { headers });
   }
 
   getRecipe(id: string): Observable<Recipe> {

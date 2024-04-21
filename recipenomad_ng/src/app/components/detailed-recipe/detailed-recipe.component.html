@@ -94,8 +94,9 @@
 
 <section class="detailedRecipeMedia">
   <!-- Loop through all media items and display them -->
-  <div *ngFor="let mediaItem of recipe?.media">
-    <h3>{{ recipe?.title }}</h3>
+  <h3>{{ recipe?.title }}</h3>
+  <div class="videoContainer" *ngFor="let mediaItem of recipe?.media">
+    
     <!-- Check if the media item is a video -->
     <video *ngIf="mediaItem?.type?.startsWith('video')" controls autoplay>
         <source [src]="getFullMediaUrl(mediaItem.url)" [type]="mediaItem?.type">

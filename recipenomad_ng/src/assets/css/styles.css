@@ -794,16 +794,17 @@ span p {
     width: 80%;
     align-items: center;
     height: 100%;
-    padding-top: 5rem;
 }
-.videoContainer video {
+.videoContainer video,
+.videoContainer img {
     width: 100%;
     height: auto;
     display: block;
 }
-.videoContainer h3 {
+.detailedRecipeMedia h3 {
+    padding-top: 5rem;
     text-align: left;
-    width: 100%;
+    width: 80%;
 }
 .detailedRecipeInfo {
     display: flex;
@@ -1695,6 +1696,10 @@ input[type="password"] {
     }
     /* Detailed Recipe Page Mobile */
     .videoContainer {
+        width: 100%;
+    }
+    .detailedRecipeMedia h3 {
+        padding-top: 3rem;
         width: 100%;
     }
     .cardContainer {

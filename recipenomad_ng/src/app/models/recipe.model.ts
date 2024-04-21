@@ -1,8 +1,11 @@
 export interface Recipe {
+  _id: string,
   title: string;
   ingredients: string;
   media: Media[];
   instructions: string;
+  category: string;
+  createdAt: Date;
 }
 
 

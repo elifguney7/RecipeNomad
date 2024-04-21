@@ -1,23 +1,23 @@
-<section class="allRecipesBanner">
+ <section class="allRecipesBanner" *ngIf="latestRecipe">
     <div class="allRecipesBannerContent">
         <h3>Last Added Recipe</h3>
         <div class="primaryCard">
             <div class="left">
-                <img src="./assets/images/recipe-1.jpg" alt="">
+                <img [src]="getFullMediaUrl(latestRecipe.media[0].url)" alt="Latest Recipe Image">
             </div>
             <div class="right">
                 <div class="toRight">
                     <button class="primaryButton" routerLink="detailed-recipe">
-                        <!-- altta sadece çorbaları gösterebiliriz -->
+                        
                         <span>
                             <svg height="30px" width="30px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:#fff;} </style> <g> <path class="st0" d="M400.42,239.025c3.623,4.43,6.856,9.011,9.61,13.742c-19.939,49.982-90.592,86.925-174.695,86.925 c-84.111,0-154.757-36.943-174.696-86.925c26.428-45.438,94.664-77.809,174.696-77.809c34.922,0,67.6,6.167,95.539,16.9 c11.826-24.242,29.331-57.668,48.918-87.074c-39.877-19.924-90.008-31.802-144.458-31.802C105.359,72.982,0,140.59,0,223.989 c0,76.484,58.828,233.374,235.335,233.374c176.252,0,235.162-156.44,235.326-233.052c0-0.105,0.008-0.209,0.008-0.322 c0-20.126-6.16-39.331-17.296-56.889C433.329,189.148,413.645,215.958,400.42,239.025z"></path> <path class="st0" d="M439.07,70.542c-46.748,37.4-101.759,163.26-101.759,163.26c-2.417,7.23,11.668,15.291,22.004,15.867 c7.844,0.434,10.464-2.62,10.464-2.62c19.61-43.148,77.719-119.924,120.283-141.202C542.363,79.696,491.372,28.703,439.07,70.542z"></path> </g> </g></svg>
                             <p>Soup</p>
                         </span>
                     </button>
                 </div>
-                <h4>Salmon in Creamy Tomato Sauce</h4>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae veniam quod aliquam molestiae error odit nihil voluptas velit cum, tempora eaque et iste officiis minima expedita asperiores explicabo iusto mollitia dignissimos. Optio veritatis dicta suscipit animi nam officiis maxime dolorum numquam aspernatur dolorem odit doloremque, nostrum vel, eveniet reiciendis iure.</p>
-                <button class="detailRecipeButton" routerLink="/detailed-recipe">
+                <h4>{{ latestRecipe.title }}</h4>
+                <p>{{ latestRecipe.instructions }}</p>
+                <button class="detailRecipeButton" [routerLink]="['/detailed-recipe', latestRecipe._id]">
                     <span>
                         <p>View Recipe</p>
                         <svg height="30px" width="30px" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.523 18.787s4.501-4.505 6.255-6.26c.146-.146.219-.338.219-.53s-.073-.383-.219-.53c-1.753-1.754-6.255-6.258-6.255-6.258-.144-.145-.334-.217-.524-.217-.193 0-.385.074-.532.221-.293.292-.295.766-.004 1.056l4.978 4.978h-14.692c-.414 0-.75.336-.75.75s.336.75.75.75h14.692l-4.979 4.979c-.289.289-.286.762.006 1.054.148.148.341.222.533.222.19 0 .378-.072.522-.215z" fill-rule="nonzero"/></svg>
@@ -27,11 +27,12 @@
         </div>
     </div>
 </section>
+
 <section class="allRecipesContainer">
     <div class="allRecipesGrid">
         <div class="recipeHeadernButton">
         <h3>All Recipes</h3>
-        <div class="search"> <!-- Non Functional -->
+        <div class="search"> 
             <input type="text" placeholder="Filter by recipe name" #filter>
             <button class="searchButton">
                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0,0,255.99728,255.99728">
@@ -45,102 +46,29 @@
                     Categories
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" routerLink="all-recipes">Soup</a>
-                  <a class="dropdown-item" routerLink="all-recipes">Pizza</a>
-                  <a class="dropdown-item" routerLink="all-recipes">Desert</a>
-                </div>
+                    <a class="dropdown-item" (click)="filterCategory('Soup')">Soup</a>
+                    <a class="dropdown-item" (click)="filterCategory('Pizza')">Pizza</a>
+                    <a class="dropdown-item" (click)="filterCategory('Dessert')">Dessert</a>
+                  </div>
               </div>
-            <!-- <button class="primaryButton" routerLink="/all-recipes">Categories</button> -->
         </div>
         </div>
         <div class="recipesGridAll">
             <div class="row row-cols-1 row-cols-md-3">
-                <div class="col mb-4">
-                    <div class="card h-100">
-                        <img src="./assets/images/recipe-1.jpg" class="card-img-top" alt="recipe image 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Salmon in Creamy Tomato Sauce</h5>
-                            <button class="detailRecipeButton" routerLink="/detailed-recipe">
-                                <span>
-                                    <p>View Recipe</p>
-                                    <svg height="30px" width="30px" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.523 18.787s4.501-4.505 6.255-6.26c.146-.146.219-.338.219-.53s-.073-.383-.219-.53c-1.753-1.754-6.255-6.258-6.255-6.258-.144-.145-.334-.217-.524-.217-.193 0-.385.074-.532.221-.293.292-.295.766-.004 1.056l4.978 4.978h-14.692c-.414 0-.75.336-.75.75s.336.75.75.75h14.692l-4.979 4.979c-.289.289-.286.762.006 1.054.148.148.341.222.533.222.19 0 .378-.072.522-.215z" fill-rule="nonzero"/></svg>
-                                </span>
-                            </button>
-                        </div>
+                <div class="col mb-4" *ngFor="let recipe of recipes">
+                <div class="card h-100">
+                    <img [src]="getFullMediaUrl(recipe.media[0].url)" class="card-img-top" alt="Recipe Image">
+                    <div class="card-body">
+                    <h5 class="card-title">{{ recipe.title }}</h5>
+                    <button class="detailRecipeButton" [routerLink]="['/detailed-recipe', recipe._id]">
+                        View Recipe
+                    </button>
                     </div>
                 </div>
-                <div class="col mb-4">
-                    <div class="card h-100">
-                        <img src="./assets/images/recipe-2.jpg" class="card-img-top" alt="recipe image 2">
-                        <div class="card-body">
-                            <h5 class="card-title">Blueberry Pancake</h5>
-                            <button class="detailRecipeButton" routerLink="/detailed-recipe">
-                                <span>
-                                    <p>View Recipe</p>
-                                    <svg height="30px" width="30px" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.523 18.787s4.501-4.505 6.255-6.26c.146-.146.219-.338.219-.53s-.073-.383-.219-.53c-1.753-1.754-6.255-6.258-6.255-6.258-.144-.145-.334-.217-.524-.217-.193 0-.385.074-.532.221-.293.292-.295.766-.004 1.056l4.978 4.978h-14.692c-.414 0-.75.336-.75.75s.336.75.75.75h14.692l-4.979 4.979c-.289.289-.286.762.006 1.054.148.148.341.222.533.222.19 0 .378-.072.522-.215z" fill-rule="nonzero"/></svg>
-                                </span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-4">
-                    <div class="card h-100">
-                        <img src="./assets/images/recipe-3.jpg" class="card-img-top" alt="recipe image 3">
-                        <div class="card-body">
-                            <h5 class="card-title">Brownie</h5>
-                            <button class="detailRecipeButton" routerLink="/detailed-recipe">
-                                <span>
-                                    <p>View Recipe</p>
-                                    <svg height="30px" width="30px" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.523 18.787s4.501-4.505 6.255-6.26c.146-.146.219-.338.219-.53s-.073-.383-.219-.53c-1.753-1.754-6.255-6.258-6.255-6.258-.144-.145-.334-.217-.524-.217-.193 0-.385.074-.532.221-.293.292-.295.766-.004 1.056l4.978 4.978h-14.692c-.414 0-.75.336-.75.75s.336.75.75.75h14.692l-4.979 4.979c-.289.289-.286.762.006 1.054.148.148.341.222.533.222.19 0 .378-.072.522-.215z" fill-rule="nonzero"/></svg>
-                                </span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-4">
-                    <div class="card h-100">
-                        <img src="./assets/images/recipe-2.jpg" class="card-img-top" alt="recipe image 2">
-                        <div class="card-body">
-                            <h5 class="card-title">Blueberry Pancake</h5>
-                            <button class="detailRecipeButton" routerLink="/detailed-recipe">
-                                <span>
-                                    <p>View Recipe</p>
-                                    <svg height="30px" width="30px" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.523 18.787s4.501-4.505 6.255-6.26c.146-.146.219-.338.219-.53s-.073-.383-.219-.53c-1.753-1.754-6.255-6.258-6.255-6.258-.144-.145-.334-.217-.524-.217-.193 0-.385.074-.532.221-.293.292-.295.766-.004 1.056l4.978 4.978h-14.692c-.414 0-.75.336-.75.75s.336.75.75.75h14.692l-4.979 4.979c-.289.289-.286.762.006 1.054.148.148.341.222.533.222.19 0 .378-.072.522-.215z" fill-rule="nonzero"/></svg>
-                                </span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-4">
-                    <div class="card h-100">
-                        <img src="./assets/images/recipe-3.jpg" class="card-img-top" alt="recipe image 3">
-                        <div class="card-body">
-                            <h5 class="card-title">Brownie</h5>
-                            <button class="detailRecipeButton" routerLink="/detailed-recipe">
-                                <span>
-                                    <p>View Recipe</p>
-                                    <svg height="30px" width="30px" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.523 18.787s4.501-4.505 6.255-6.26c.146-.146.219-.338.219-.53s-.073-.383-.219-.53c-1.753-1.754-6.255-6.258-6.255-6.258-.144-.145-.334-.217-.524-.217-.193 0-.385.074-.532.221-.293.292-.295.766-.004 1.056l4.978 4.978h-14.692c-.414 0-.75.336-.75.75s.336.75.75.75h14.692l-4.979 4.979c-.289.289-.286.762.006 1.054.148.148.341.222.533.222.19 0 .378-.072.522-.215z" fill-rule="nonzero"/></svg>
-                                </span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-4">
-                    <div class="card h-100">
-                        <img src="./assets/images/recipe-4.jpg" class="card-img-top" alt="recipe image 4">
-                        <div class="card-body">
-                            <h5 class="card-title">Pizza</h5>
-                            <button class="detailRecipeButton" routerLink="/detailed-recipe">
-                                <span>
-                                    <p>View Recipe</p>
-                                    <svg height="30px" width="30px" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.523 18.787s4.501-4.505 6.255-6.26c.146-.146.219-.338.219-.53s-.073-.383-.219-.53c-1.753-1.754-6.255-6.258-6.255-6.258-.144-.145-.334-.217-.524-.217-.193 0-.385.074-.532.221-.293.292-.295.766-.004 1.056l4.978 4.978h-14.692c-.414 0-.75.336-.75.75s.336.75.75.75h14.692l-4.979 4.979c-.289.289-.286.762.006 1.054.148.148.341.222.533.222.19 0 .378-.072.522-.215z" fill-rule="nonzero"/></svg>
-                                </span>
-                            </button>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
+  
