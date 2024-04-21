@@ -2,6 +2,7 @@ import {Component, OnInit, ElementRef, Renderer2, ChangeDetectorRef} from '@angu
 import {Subject, Observable, BehaviorSubject} from 'rxjs';
 import {WebcamImage, WebcamInitError, WebcamUtil} from 'ngx-webcam';
 import { RecipeService } from 'src/app/services/recipe.service';
+import { UserService } from 'src/app/services/user.service';
 
 
 @Component({
@@ -12,8 +13,11 @@ import { RecipeService } from 'src/app/services/recipe.service';
 export class CreateRecipeComponent implements OnInit {
 
   deviceFiles: File[] = [];
-
+  user: any = {
+    firstName: ""
+  };
   recipe = {
+    _id:"",
     title: '',
     category: "",
     ingredients: '',
@@ -21,7 +25,9 @@ export class CreateRecipeComponent implements OnInit {
     media: ''
   };
 
-  constructor(private elRef: ElementRef, private renderer: Renderer2, private recipeService: RecipeService, private cdRef: ChangeDetectorRef) {}
+  constructor(private elRef: ElementRef, private renderer: Renderer2, private recipeService: RecipeService, private userService: UserService, private cdRef: ChangeDetectorRef) {}
+
+  
   showGallery() {
     const selectionDiv = this.elRef.nativeElement.querySelector('.selection');
     const infoDiv = this.elRef.nativeElement.querySelector('.infoDiv');
@@ -160,8 +166,21 @@ export class CreateRecipeComponent implements OnInit {
       .then((mediaDevices: MediaDeviceInfo[]) => {
         this.multipleWebcamsAvailable = mediaDevices && mediaDevices.length > 1;
       });
+
+      this.loadUserProfile();
   }
 
+  loadUserProfile() {
+    this.userService.getUserProfile().subscribe({
+        next: (userData) => {
+            this.user = userData;
+            console.log('User data loaded', userData);
+        },
+        error: (err) => {
+            console.error('Error fetching user data', err);
+        }
+    });
+}
   public triggerSnapshot(): void {
     this.trigger.next();
   }
@@ -174,42 +193,42 @@ export class CreateRecipeComponent implements OnInit {
     this.errors.push(error);
   }
 
-webcamImageUrl: BehaviorSubject<string | null> = new BehaviorSubject<string | null>(null);
+  webcamImageUrl: BehaviorSubject<string | null> = new BehaviorSubject<string | null>(null);
 
-public handleImage(webcamImage: WebcamImage): void {
-  const imageBlob = this.dataURItoBlob(webcamImage.imageAsDataUrl);
-  if (imageBlob) {
-    const imageFile = new File([imageBlob], 'webcam-image.png', { type: 'image/png' });
-    this.deviceFiles.push(imageFile);
-    const url = URL.createObjectURL(imageFile);
-    this.webcamImageUrl.next(url);
+  public handleImage(webcamImage: WebcamImage): void {
+    const imageBlob = this.dataURItoBlob(webcamImage.imageAsDataUrl);
+    if (imageBlob) {
+      const imageFile = new File([imageBlob], 'webcam-image.png', { type: 'image/png' });
+      this.deviceFiles.push(imageFile);
+      const url = URL.createObjectURL(imageFile);
+      this.webcamImageUrl.next(url);
+    }
   }
-}
 
-  private dataURItoBlob(dataURI: string): Blob | null {
-  try {
-    const base64Index = dataURI.indexOf('base64,') + 7; // Find the base64 index
-    if (base64Index === 6) { // If 'base64,' was not found, index will be 6 - 1
-      console.error('Invalid data URI');
+    private dataURItoBlob(dataURI: string): Blob | null {
+    try {
+      const base64Index = dataURI.indexOf('base64,') + 7; // Find the base64 index
+      if (base64Index === 6) { // If 'base64,' was not found, index will be 6 - 1
+        console.error('Invalid data URI');
+        return null;
+      }
+
+      const byteString = window.atob(dataURI.substring(base64Index));
+      const arrayBuffer = new ArrayBuffer(byteString.length);
+      const int8Array = new Uint8Array(arrayBuffer);
+
+      for (let i = 0; i < byteString.length; i++) {
+        int8Array[i] = byteString.charCodeAt(i);
+      }
+      this.cdRef.detectChanges();
+
+      return new Blob([int8Array], { type: 'image/png' });
+    } catch (error) {
+      console.error('Failed to convert data URI to blob:', error);
       return null;
     }
-
-    const byteString = window.atob(dataURI.substring(base64Index));
-    const arrayBuffer = new ArrayBuffer(byteString.length);
-    const int8Array = new Uint8Array(arrayBuffer);
-
-    for (let i = 0; i < byteString.length; i++) {
-      int8Array[i] = byteString.charCodeAt(i);
-    }
-    this.cdRef.detectChanges();
-
-    return new Blob([int8Array], { type: 'image/png' });
-  } catch (error) {
-    console.error('Failed to convert data URI to blob:', error);
-    return null;
+    
   }
-  
-}
 
   public get triggerObservable(): Observable<void> {
     return this.trigger.asObservable();
