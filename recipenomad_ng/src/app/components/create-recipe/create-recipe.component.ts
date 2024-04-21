@@ -15,6 +15,7 @@ export class CreateRecipeComponent implements OnInit {
 
   recipe = {
     title: '',
+    category: "",
     ingredients: '',
     instructions: '',
     media: ''
@@ -79,6 +80,8 @@ export class CreateRecipeComponent implements OnInit {
     });
 
     formData.append('title', this.recipe.title);
+    formData.append('category', this.recipe.category);
+
     // formData.append('ingredients', JSON.stringify(this.recipe.ingredients));  // Assuming `ingredients` is an array of objects
     formData.append('ingredients', this.recipe.ingredients);
     formData.append('instructions', this.recipe.instructions);
