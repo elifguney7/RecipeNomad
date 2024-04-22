@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/app/environments/environment';
+import { Recipe } from 'src/app/models/recipe.model';
+import { RecipeService } from 'src/app/services/recipe.service';
 
 @Component({
   selector: 'app-home',
@@ -7,12 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   slideIndex: number = 0;
+  recipes: Recipe[] = [];
+
+  constructor(private recipeService: RecipeService) {}
+
 
   ngOnInit(): void {
     const slides: HTMLElement | null = document.querySelector(".categoriesSection");
     const prevButton: HTMLElement | null = document.querySelector(".prevButton");
     const nextButton: HTMLElement | null = document.querySelector(".nextButton");
 
+    this.loadRecipes();
+    
     if (slides && prevButton && nextButton) {
       let currentIndex = 0;
       const categoryCount = slides.querySelectorAll('.categoriesLogos').length;
@@ -63,4 +72,17 @@ export class HomeComponent implements OnInit {
     }
   }
 }
+loadRecipes() {
+  this.recipeService.getRecipes().subscribe({
+    next: (data) => {
+      this.recipes = data.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+      
+    },
+    error: (err) => console.error('Failed to get recipes', err)
+  });
+}
+getFullMediaUrl(relativeUrl: string): string {
+  return `${environment.apiUrl}/${relativeUrl}`; // Ensure environment.apiUrl is set to your server's URL
+}
+
 }

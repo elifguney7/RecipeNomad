@@ -18,130 +18,103 @@
         </div>
     </div>
 </section>
-    <!-- Home banner end -->
-    <!--Categories Start-->
-    <section class="homeCategories"> <!--center-->
-      <h3>Categories</h3>
-      <div class="sliderGrid">
-        <div class="navigationButtonsLeft">
-          <button class="prevButton"><</button>
-        </div>        
-        <div class="recipeCategories"> <!--wrapper-->
-            <div class="categoriesSection"> <!--inner-->
-              <div class="categoriesLogos"> <!--card-->
-                <a href="">
-                  <img src="./assets/images/breakfastLogo.jpg" class="imgLogo" alt="breakfast logo">
-                  <h4 class="categoriesSubtitle">Breakfast</h4>
-                </a>
-              </div>
-              <div class="categoriesLogos"> <!--card-->
-                <a href="">
-                  <img src="./assets/images/dessertsLogo.jpg" class="imgLogo" alt="desserts logo">
-                  <h4 class="categoriesSubtitle">Desserts</h4>
-                </a>
-              </div>
-              <div class="categoriesLogos"> <!--card-->
-                <a href="">          
-                  <img src="./assets/images/pastaLogo.jpg" class="imgLogo" alt="pasta logo">  
-                  <h4 class="categoriesSubtitle">Pasta</h4>
-                </a>
-              </div>
-              <div class="categoriesLogos"> <!--card-->
-                <a href="">
-                  <img src="./assets/images/pizzaLogo.jpg" class="imgLogo" alt="pizza logo">
-                  <h4 class="categoriesSubtitle">Pizza</h4>
-                </a>
-              </div>
-              <div class="categoriesLogos">
-                <a href="">
-                  <img src="./assets/images/veganLogo.jpg" class="imgLogo" alt="vegan logo">
-                  <h4 class="categoriesSubtitle">Vegan</h4>
-                </a>
-              </div>
-            </div>
+<!-- Home banner end -->
+<!--Categories Start-->
+<section class="homeCategories"> <!--center-->
+  <h3>Categories</h3>
+  <div class="sliderGrid">
+    <div class="navigationButtonsLeft">
+      <button class="prevButton"><</button>
+    </div>        
+    <div class="recipeCategories"> <!--wrapper-->
+        <div class="categoriesSection"> <!--inner-->
+          <div class="categoriesLogos"> <!--card-->
+            <a href="">
+              <img src="./assets/images/breakfastLogo.jpg" class="imgLogo" alt="breakfast logo">
+              <h4 class="categoriesSubtitle">Breakfast</h4>
+            </a>
+          </div>
+          <div class="categoriesLogos"> <!--card-->
+            <a href="">
+              <img src="./assets/images/dessertsLogo.jpg" class="imgLogo" alt="desserts logo">
+              <h4 class="categoriesSubtitle">Desserts</h4>
+            </a>
+          </div>
+          <div class="categoriesLogos"> <!--card-->
+            <a href="">          
+              <img src="./assets/images/pastaLogo.jpg" class="imgLogo" alt="pasta logo">  
+              <h4 class="categoriesSubtitle">Pasta</h4>
+            </a>
+          </div>
+          <div class="categoriesLogos"> <!--card-->
+            <a href="">
+              <img src="./assets/images/pizzaLogo.jpg" class="imgLogo" alt="pizza logo">
+              <h4 class="categoriesSubtitle">Pizza</h4>
+            </a>
+          </div>
+          <div class="categoriesLogos">
+            <a href="">
+              <img src="./assets/images/veganLogo.jpg" class="imgLogo" alt="vegan logo">
+              <h4 class="categoriesSubtitle">Vegan</h4>
+            </a>
+          </div>
         </div>
-        <div class="navigationButtonsRight">
-          <button class="nextButton">></button>
+    </div>
+    <div class="navigationButtonsRight">
+      <button class="nextButton">></button>
+    </div>
+  </div>
+</section>
+<!--Categories End-->
+<!-- All recipes preview start -->
+<section class="recipesPreview" *ngIf="recipes.length > 0">
+    <div class="recipesPreviewContent">
+      <div class="recipeHeadernButton">
+        <h3>Your all time favorite recipes</h3>
+        <div class="allRecipeButton">
+          <button class="primaryButton" routerLink="/all-recipes">See all recipes</button>
         </div>
       </div>
-    </section>
-    <!--Categories End-->
-    <!-- All recipes preview start -->
-    <section class="recipesPreview">
-        <div class="recipesPreviewContent">
-          <div class="recipeHeadernButton">
-            <h3>Your all time favorite recipes</h3>
-            <div class="allRecipeButton">
-              <button class="primaryButton" routerLink="/all-recipes">See all recipes</button>
-            </div>
-          </div>
-          <div class="sliderGrid">
-            <div class="navigationButtonLeft">
-              <button class="prevButtonPrew"><</button>
-            </div>            
-            <div class="recipesGrid">
-              <div class="row">
-                <div class="card h-100 w-25">
-                  <img src="./assets/images/recipe-1.jpg" class="card-img-top" alt="recipe image 1">
-                  <div class="card-body">
-                    <h5 class="card-title">Salmon in Creamy Tomato Sauce</h5>
-                    <a class="card-text" routerLink="/detailed-recipe">View Recipe</a>
-                  </div>
-                </div>
-                <div class="card h-100 w-25">
-                  <img src="./assets/images/recipe-2.jpg" class="card-img-top" alt="recipe image 2">
-                  <div class="card-body">
-                    <h5 class="card-title">Blueberry Pancake</h5>
-                    <a class="card-text" routerLink="/detailed-recipe">View Recipe</a> 
-                  </div>
-                </div>
-                <div class="card h-100 w-25">
-                  <img src="./assets/images/recipe-1.jpg" class="card-img-top" alt="recipe image 1">
-                  <div class="card-body">
-                    <h5 class="card-title">Salmon in Creamy Tomato Sauce</h5>
-                    <a class="card-text" routerLink="/detailed-recipe">View Recipe</a>
-                  </div>
-                </div>
-                <div class="card h-100w-25">
-                  <img src="./assets/images/recipe-3.jpg" class="card-img-top" alt="recipe image 3">
-                  <div class="card-body">
-                    <h5 class="card-title">Brownie</h5>
-                    <a class="card-text" routerLink="/detailed-recipe">View Recipe</a>
-                  </div>
-                </div>
-                <div class="card h-100">
-                  <img src="./assets/images/recipe-4.jpg" class="card-img-top" alt="recipe image 4">
-                  <div class="card-body">
-                    <h5 class="card-title">Pizza</h5>
-                    <a class="card-text" routerLink="/detailed-recipe">View Recipe</a>
-                  </div>
-                </div> 
+      <div class="sliderGrid">
+        <div class="navigationButtonLeft">
+          <button class="prevButtonPrew"><</button>
+        </div>            
+        <div class="recipesGrid">
+          <div class="row">
+            <div class="card h-100 w-25" *ngFor="let recipe of recipes">
+              <img [src]="getFullMediaUrl(recipe.media[0].url)" class="card-img-top" alt="Recipe Image">
+              <div class="card-body">
+                <h5 class="card-title">{{ recipe.title }}</h5>
+                <a class="card-text" [routerLink]="['/detailed-recipe', recipe._id]">View Recipe</a>
               </div>
             </div>
-            <div class="navigationButtonRight">
-              <button class="nextButtonPrew">></button>
-            </div>
-          </div>
-            <div class="allRecipeButtonMobile">
-              <button class="primaryButton" routerLink="/all-recipes">See all recipes</button>
           </div>
         </div>
-    </section>
-    <!-- All recipes preview end -->
-    <!-- About section start -->
-    <section class="homeAbout">
-        <div class="aboutCard">
-            <h3>About Us</h3>
-            <p>
-                Our aim is <b>hands free</b> cooking experience. You can listen ingredient list and steps of the recipe.
-                Also, can interact with video by saying START, STOP, SLOWLY, BACK. Let's give it a try and be one of us!
-            </p>
-            <button class="primaryButton" routerLink="/about">
-                Learn More
-            </button>
+        <div class="navigationButtonRight">
+          <button class="nextButtonPrew">></button>
         </div>
-    </section>
+      </div>
+        <div class="allRecipeButtonMobile">
+          <button class="primaryButton" routerLink="/all-recipes">See all recipes</button>
+        </div>
+    </div>
 
-    <!-- About section end -->
+</section>
+<!-- All recipes preview end -->
+<!-- About section start -->
+<section class="homeAbout">
+    <div class="aboutCard">
+        <h3>About Us</h3>
+        <p>
+            Our aim is <b>hands free</b> cooking experience. You can listen ingredient list and steps of the recipe.
+            Also, can interact with video by saying START, STOP, SLOWLY, BACK. Let's give it a try and be one of us!
+        </p>
+        <button class="primaryButton" routerLink="/about">
+            Learn More
+        </button>
+    </div>
+</section>
+
+<!-- About section end -->
 
 

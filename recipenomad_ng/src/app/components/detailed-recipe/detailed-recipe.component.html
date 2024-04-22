@@ -1,15 +1,35 @@
 <section class="detailedRecipeMedia">
   <!-- Loop through all media items and display them -->
   <h3>{{ recipe?.title }}</h3>
-  <div class="videoContainer" *ngFor="let mediaItem of recipe?.media">
+  <!-- <div class="videoContainer" *ngFor="let mediaItem of recipe?.media">
     
-    <!-- Check if the media item is a video -->
     <video *ngIf="mediaItem?.type?.startsWith('video')" controls autoplay>
         <source [src]="getFullMediaUrl(mediaItem.url)" [type]="mediaItem?.type">
         Your browser does not support the video tag.
     </video>
-    <!-- Check if the media item is an image -->
     <img *ngIf="mediaItem.type.startsWith('image')" [src]="getFullMediaUrl(mediaItem.url)" alt="{{ recipe?.title }}">
+  </div> -->
+  <div id="recipeMediaCarousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div *ngFor="let mediaItem of recipe?.media; let isFirst = first" class="carousel-item" [class.active]="isFirst">
+        <!-- Display video if media item is a video -->
+        <video *ngIf="mediaItem?.type?.startsWith('video')" class="d-block w-100" controls>
+          <source [src]="getFullMediaUrl(mediaItem.url)" [type]="mediaItem?.type">
+          Your browser does not support the video tag.
+        </video>
+        <!-- Display image if media item is an image -->
+        <img *ngIf="mediaItem.type.startsWith('image')" [src]="getFullMediaUrl(mediaItem.url)" class="d-block w-100" alt="{{ recipe?.title }}">
+      </div>
+    </div>
+    <!-- Carousel controls -->
+    <a class="carousel-control-prev" href="#recipeMediaCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#recipeMediaCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
 </section>
 
