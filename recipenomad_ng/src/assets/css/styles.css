@@ -700,8 +700,12 @@ span p {
     font-size: 16px;
     width: 100%;
 }
+.allRecipesButtonContainer {
+    display: flex;
+    justify-content: space-between;
+}
 .detailRecipeButton {
-    width: 200px;
+    width: 45%;
     height:50px;
     background-color: rgb(255, 255, 255);
     color:var(--black);
@@ -727,6 +731,13 @@ span p {
 .detailRecipeButton:hover svg path{
     fill: #fff !important;
 } 
+.latestRecipeButton {
+    width: 200px;
+}
+.deleteRecipeButton:hover {
+    border: 2px solid #ce1c1f;
+    background-color: #ce1c1f;
+}
 .recipesGridAll {
     width: 100%;
 }

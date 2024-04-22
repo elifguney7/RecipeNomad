@@ -38,5 +38,21 @@ export class AllRecipesComponent implements OnInit {
   getFullMediaUrl(relativeUrl: string): string {
     return `${environment.apiUrl}/${relativeUrl}`; // Ensure environment.apiUrl is set to your server's URL
   }
+
+  deleteRecipe(recipeId: string) {
+    if (confirm("Are you sure you want to delete this recipe?")) {
+      this.recipeService.deleteRecipe(recipeId).subscribe({
+        next: () => {
+          console.log('Recipe deleted successfully');
+          this.recipes = this.recipes.filter(recipe => recipe._id !== recipeId);
+          this.loadRecipes();
+        },
+        error: (err) => {
+          console.error('Error deleting recipe', err);
+          alert('Failed to delete the recipe');
+        }
+      });
+    }
+  }
 }
 

@@ -17,7 +17,7 @@
                 </div>
                 <h4>{{ latestRecipe.title }}</h4>
                 <p>{{ latestRecipe.instructions }}</p>
-                <button class="detailRecipeButton" [routerLink]="['/detailed-recipe', latestRecipe._id]">
+                <button class="detailRecipeButton latestRecipeButton"  [routerLink]="['/detailed-recipe', latestRecipe._id]">
                     <span>
                         <p>View Recipe</p>
                         <svg height="30px" width="30px" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.523 18.787s4.501-4.505 6.255-6.26c.146-.146.219-.338.219-.53s-.073-.383-.219-.53c-1.753-1.754-6.255-6.258-6.255-6.258-.144-.145-.334-.217-.524-.217-.193 0-.385.074-.532.221-.293.292-.295.766-.004 1.056l4.978 4.978h-14.692c-.414 0-.75.336-.75.75s.336.75.75.75h14.692l-4.979 4.979c-.289.289-.286.762.006 1.054.148.148.341.222.533.222.19 0 .378-.072.522-.215z" fill-rule="nonzero"/></svg>
@@ -58,15 +58,18 @@
         <div class="recipesGridAll">
             <div class="row row-cols-1 row-cols-md-3">
                 <div class="col mb-4" *ngFor="let recipe of filteredRecipes">
-                <div class="card h-100">
-                    <img [src]="getFullMediaUrl(recipe.media[0].url)" class="card-img-top" alt="Recipe Image">
-                    <div class="card-body">
-                    <h5 class="card-title">{{ recipe.title }}</h5>
-                    <button class="detailRecipeButton" [routerLink]="['/detailed-recipe', recipe._id]">
-                        View Recipe
-                    </button>
+                    <div class="card h-100">
+                        <img [src]="getFullMediaUrl(recipe.media[0].url)" class="card-img-top" alt="Recipe Image">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ recipe.title }}</h5>
+                            <div class="allRecipesButtonContainer">
+                                <button class="detailRecipeButton" [routerLink]="['/detailed-recipe', recipe._id]">
+                                    View Recipe
+                                </button>
+                                <button class="detailRecipeButton deleteRecipeButton" (click)="deleteRecipe(recipe._id)">Delete Recipe</button>
+                            </div>
+                        </div>
                     </div>
-                </div>
                 </div>
             </div>
         </div>
