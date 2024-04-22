@@ -12,6 +12,7 @@ export class AllRecipesComponent implements OnInit {
   recipes: Recipe[] = [];
   filteredRecipes: Recipe[] = [];
   latestRecipe?: Recipe | undefined;
+  searchTerm: string = '';
 
   constructor(private recipeService: RecipeService) {}
 
@@ -33,6 +34,15 @@ export class AllRecipesComponent implements OnInit {
 
   filterCategory(category: string) {
     this.filteredRecipes = this.recipes.filter(recipe => recipe.category === category);
+  }
+  filterRecipesByName() {
+    if (!this.searchTerm) {
+      this.filteredRecipes = this.recipes;
+    } else {
+      this.filteredRecipes = this.recipes.filter(recipe =>
+        recipe.title.toLowerCase().includes(this.searchTerm.toLowerCase())
+      );
+    }
   }
 
   getFullMediaUrl(relativeUrl: string): string {
