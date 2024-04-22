@@ -95,6 +95,7 @@ export class CreateRecipeComponent implements OnInit {
     this.recipeService.createRecipe(formData).subscribe({
       next: (response) => {
         console.log('Recipe created successfully', response);
+        this.succesfullyCreated(); // Call the success function on successful submission
       },
       error: (error) => {
         console.error('Error creating recipe', error);
