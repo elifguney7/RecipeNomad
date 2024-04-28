@@ -1233,7 +1233,7 @@ span p {
     border: 2px solid black;
     border-radius: 0.75rem;
     color: black;
-    width: 125px;
+    width: 200px;
     height: 40px;
     text-decoration: none;
     cursor: pointer;
@@ -1265,6 +1265,12 @@ span p {
     border: none;
     border-radius: 0.75rem;
     margin-top: 1rem;
+}
+.submitButton {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1rem;
 }
 /* About page  */
 /* .container {

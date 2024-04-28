@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { Recipe } from 'src/app/models/recipe.model'; // Make sure the path is correct
 import { environment } from 'src/app/environments/environment'; // Adjust path as necessary
-
+import { Instruction } from 'src/app/models/recipe.model';
 @Component({
   selector: 'app-detailed-recipe',
   templateUrl: './detailed-recipe.component.html',
@@ -12,7 +12,7 @@ import { environment } from 'src/app/environments/environment'; // Adjust path a
 })
 export class DetailedRecipeComponent implements OnInit {
   recipe: Recipe | undefined;
-
+ 
   constructor(
     private recipeService: RecipeService,
     private route: ActivatedRoute
@@ -30,12 +30,17 @@ export class DetailedRecipeComponent implements OnInit {
 
   fetchRecipe(recipeId: string): void {
     this.recipeService.getRecipe(recipeId).subscribe({
-      next: (data) => {
-        this.recipe = data;
+      next: (data: any) => {  // Consider typing `data` more strictly if possible
+        this.recipe = {
+          ...data,
+          instructions: typeof data.instructions === 'string' ? JSON.parse(data.instructions) as Instruction[] : data.instructions
+        };
       },
       error: (err) => console.error('Failed to load recipe:', err)
     });
   }
+  
+
   
   getFullMediaUrl(relativeUrl: string): string {
     return `${environment.apiUrl}/${relativeUrl}`; // Ensure environment.apiUrl is set to your server's URL

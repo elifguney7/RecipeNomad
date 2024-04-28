@@ -130,13 +130,26 @@
             </div>
           </div>
           <div>
-            <label for="instructions">Instructions:</label>
+            <!-- <label for="instructions">Instructions:</label>
             <textarea id="instructions" name="instructions" [(ngModel)]="recipe.instructions" #instructions="ngModel" required></textarea>
             <div *ngIf="instructions.touched && instructions.errors?.['required']">
               <small class="text-danger">Instructions are required.</small>
+            </div> -->
+
+            <div *ngFor="let instruction of recipe.instructions; let i = index" class="instruction-entry">
+              <div>
+                <label for="stepDesc{{ i }}">Step {{ i + 1 }}:</label>
+                <textarea id="stepDesc{{ i }}" name="stepDesc{{ i }}" [(ngModel)]="instruction.description" required></textarea>
+              </div>
             </div>
+            <div class="recipeNavButton" >
+              <button class="secondaryButton" style="margin-top: 0;" type="button" (click)="addInstruction()">Add Step</button>
+            </div>
+            
           </div>
-          <button type="submit">Next</button>
+          <div class="submitButton">
+            <button type="submit">Next</button>
+          </div>
         </form>
       </div>
       

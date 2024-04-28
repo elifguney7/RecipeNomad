@@ -21,7 +21,7 @@ export class CreateRecipeComponent implements OnInit {
     title: '',
     category: "",
     ingredients: '',
-    instructions: '',
+    instructions: [{ step: 'Step 1', description: '' }],
     media: ''
   };
 
@@ -78,30 +78,70 @@ export class CreateRecipeComponent implements OnInit {
     this.renderer.setStyle(lastStep, 'display', 'none');
   }
 
+  addInstruction() {
+    // Automatically generate step title based on array length
+    const stepNumber = this.recipe.instructions.length + 1;
+    this.recipe.instructions.push({ step: 'Step ' + stepNumber, description: '' });
+  }
+  
+
   submitRecipeForm() {
     const formData = new FormData();
-
+  
     this.deviceFiles.forEach(file => {
-      formData.append('media', file); // Directly append File objects
+      formData.append('media', file);  // Directly append File objects
     });
-
+  
     formData.append('title', this.recipe.title);
     formData.append('category', this.recipe.category);
-
-    // formData.append('ingredients', JSON.stringify(this.recipe.ingredients));  // Assuming `ingredients` is an array of objects
     formData.append('ingredients', this.recipe.ingredients);
-    formData.append('instructions', this.recipe.instructions);
-
+    
+    // // Convert the instructions array to a JSON string before appending
+    // const instructionsJson = JSON.stringify(this.recipe.instructions);
+    // formData.append('instructions', instructionsJson);
+      // Ensure instructions are structured correctly
+    const instructionsJson = JSON.stringify(this.recipe.instructions.map(instruction => ({
+      step: instruction.step,
+      description: instruction.description
+    })));
+    formData.append('instructions', instructionsJson);
+  
     this.recipeService.createRecipe(formData).subscribe({
       next: (response) => {
         console.log('Recipe created successfully', response);
-        this.succesfullyCreated(); // Call the success function on successful submission
+        this.succesfullyCreated();  // Call the success function on successful submission
       },
       error: (error) => {
         console.error('Error creating recipe', error);
       }
     });
   }
+  
+
+  // submitRecipeForm() {
+  //   const formData = new FormData();
+
+  //   this.deviceFiles.forEach(file => {
+  //     formData.append('media', file); // Directly append File objects
+  //   });
+
+  //   formData.append('title', this.recipe.title);
+  //   formData.append('category', this.recipe.category);
+
+  //   // formData.append('ingredients', JSON.stringify(this.recipe.ingredients));  // Assuming `ingredients` is an array of objects
+  //   formData.append('ingredients', this.recipe.ingredients);
+  //   formData.append('instructions', this.recipe.instructions);
+
+  //   this.recipeService.createRecipe(formData).subscribe({
+  //     next: (response) => {
+  //       console.log('Recipe created successfully', response);
+  //       this.succesfullyCreated(); // Call the success function on successful submission
+  //     },
+  //     error: (error) => {
+  //       console.error('Error creating recipe', error);
+  //     }
+  //   });
+  // }
 
   
   

@@ -3,11 +3,15 @@ export interface Recipe {
   title: string;
   ingredients: string;
   media: Media[];
-  instructions: string;
+  instructions: Instruction[];
   category: string;
   createdAt: Date;
 }
 
+export interface Instruction {
+  step: string;
+  description: string;
+}
 
 export interface Media {
   url: string;

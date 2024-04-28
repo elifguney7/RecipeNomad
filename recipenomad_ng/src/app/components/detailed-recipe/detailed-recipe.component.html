@@ -45,7 +45,11 @@
       <div class="instructionCard">
           <h3>Instructions</h3>
           <!-- Safely display instructions if they exist -->
-          <p>{{ recipe?.instructions }}</p>
+          <!-- <p>{{ recipe?.instructions }}</p> -->
+          <div *ngFor="let instruction of recipe?.instructions">
+            <strong>{{ instruction.step }}</strong>
+            <p>{{ instruction.description }}</p>
+          </div>
       </div>
   </div>
 </section>
