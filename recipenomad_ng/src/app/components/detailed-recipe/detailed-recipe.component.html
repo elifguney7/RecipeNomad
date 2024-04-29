@@ -9,7 +9,7 @@
     </video>
     <img *ngIf="mediaItem.type.startsWith('image')" [src]="getFullMediaUrl(mediaItem.url)" alt="{{ recipe?.title }}">
   </div> -->
-  <div id="recipeMediaCarousel" class="carousel slide" data-ride="carousel">
+  <div id="recipeMediaCarousel" class="videoContainer carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div *ngFor="let mediaItem of recipe?.media; let isFirst = first" class="carousel-item" [class.active]="isFirst">
         <!-- Display video if media item is a video -->
@@ -37,10 +37,9 @@
   <div class="cardContainer">
       <div class="ingredientCard">
           <h3>Ingredient List</h3>
-          <ul>
-              <!-- Safely iterate over ingredients if they exist -->
-              <li>{{ recipe?.ingredients }}</li>
-          </ul>
+          <div *ngFor="let ingredient of recipe?.ingredients">
+            <p>{{ ingredient.name }} - {{ ingredient.quantity }}</p>
+          </div>
       </div>
       <div class="instructionCard">
           <h3>Instructions</h3>

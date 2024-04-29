@@ -61,7 +61,7 @@ a, a:hover{
 }
 section{
     display: flex;
-    height:100vh;
+    height: auto;
     padding-top:60px;
     padding-left:120px;
     padding-right:120px

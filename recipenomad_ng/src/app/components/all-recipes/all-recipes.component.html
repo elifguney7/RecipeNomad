@@ -16,7 +16,9 @@
                     </button>
                 </div>
                 <h4>{{ latestRecipe.title }}</h4>
-                <p>{{ latestRecipe.instructions }}</p>
+                <div *ngFor="let ingredient of latestRecipe?.ingredients">
+                    <p>{{ ingredient.name }} - {{ ingredient.quantity }}</p>
+                  </div>
                 <button class="detailRecipeButton latestRecipeButton"  [routerLink]="['/detailed-recipe', latestRecipe._id]">
                     <span>
                         <p>View Recipe</p>
