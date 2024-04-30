@@ -5,6 +5,7 @@ export interface Recipe {
   media: Media[];
   instructions: Instruction[];
   category: string;
+  userId: string;
   createdAt: Date;
 }
 

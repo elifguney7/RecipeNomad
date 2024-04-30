@@ -1,5 +1,5 @@
 // detailed-recipe.component.ts
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { Recipe } from 'src/app/models/recipe.model'; // Make sure the path is correct
@@ -14,7 +14,29 @@ export class DetailedRecipeComponent implements OnInit, OnDestroy {
   recipe: Recipe | undefined;
   private speechRecognition: any;
   isListening: boolean = false;  // Flag to track if speech recognition is active
- 
+  @ViewChild('videoPlayer') videoPlayer!: ElementRef<HTMLVideoElement>;
+
+  handleVoiceCommand(command: string) {
+    switch(command) {
+      case 'start':
+        this.startVideo();
+        break;
+      case 'stop':
+        this.stopVideo();
+        break;
+    }
+  }
+
+  startVideo() {
+    console.log('starting video');
+    this.videoPlayer.nativeElement.play();
+  }
+
+  stopVideo() {
+    console.log('stoping video');
+    this.videoPlayer.nativeElement.pause();
+  }
+
   constructor(
     private recipeService: RecipeService,
     private route: ActivatedRoute
@@ -47,23 +69,21 @@ export class DetailedRecipeComponent implements OnInit, OnDestroy {
     this.speechRecognition = new SpeechRecognition();
     this.speechRecognition.continuous = true;
     this.speechRecognition.lang = 'en-US';
-    this.speechRecognition.onresult = this.handleVoiceCommand.bind(this);
+    this.speechRecognition.onresult = (event: any) => {
+      const last = event.results.length - 1;
+      const command = event.results[last][0].transcript.trim().toLowerCase();
+      this.handleVoiceCommand(command);
+    };
     this.speechRecognition.start();
     this.isListening = true;
   }
+
 
   stopListening(): void {
     if (this.speechRecognition) {
       this.speechRecognition.stop();
     }
     this.isListening = false;
-  }
-
-  handleVoiceCommand(event: any): void {
-    const last = event.results.length - 1;
-    const command = event.results[last][0].transcript.trim().toLowerCase();
-    console.log('Voice Command:', command);
-    // Implement your command logic here
   }
 
 
@@ -79,9 +99,7 @@ export class DetailedRecipeComponent implements OnInit, OnDestroy {
       error: (err) => console.error('Failed to load recipe:', err)
     });
   }
-  
-
-  
+ 
   getFullMediaUrl(relativeUrl: string): string {
     return `${environment.apiUrl}/${relativeUrl}`; // Ensure environment.apiUrl is set to your server's URL
   }
