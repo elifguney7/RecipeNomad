@@ -1,5 +1,5 @@
 // detailed-recipe.component.ts
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { Recipe } from 'src/app/models/recipe.model'; // Make sure the path is correct
@@ -10,8 +10,10 @@ import { Instruction } from 'src/app/models/recipe.model';
   templateUrl: './detailed-recipe.component.html',
   styleUrls: ['./detailed-recipe.component.css']
 })
-export class DetailedRecipeComponent implements OnInit {
+export class DetailedRecipeComponent implements OnInit, OnDestroy {
   recipe: Recipe | undefined;
+  private speechRecognition: any;
+  isListening: boolean = false;  // Flag to track if speech recognition is active
  
   constructor(
     private recipeService: RecipeService,
@@ -27,6 +29,44 @@ export class DetailedRecipeComponent implements OnInit {
       }
     });
   }
+
+  ngOnDestroy(): void {
+    this.speechRecognition.stop();
+  }
+
+  toggleListening(): void {
+    if (this.isListening) {
+      this.stopListening();
+    } else {
+      this.startListening();
+    }
+  }
+
+  startListening(): void {
+    const SpeechRecognition = window.SpeechRecognition || (window as any).webkitSpeechRecognition;
+    this.speechRecognition = new SpeechRecognition();
+    this.speechRecognition.continuous = true;
+    this.speechRecognition.lang = 'en-US';
+    this.speechRecognition.onresult = this.handleVoiceCommand.bind(this);
+    this.speechRecognition.start();
+    this.isListening = true;
+  }
+
+  stopListening(): void {
+    if (this.speechRecognition) {
+      this.speechRecognition.stop();
+    }
+    this.isListening = false;
+  }
+
+  handleVoiceCommand(event: any): void {
+    const last = event.results.length - 1;
+    const command = event.results[last][0].transcript.trim().toLowerCase();
+    console.log('Voice Command:', command);
+    // Implement your command logic here
+  }
+
+
 
   fetchRecipe(recipeId: string): void {
     this.recipeService.getRecipe(recipeId).subscribe({

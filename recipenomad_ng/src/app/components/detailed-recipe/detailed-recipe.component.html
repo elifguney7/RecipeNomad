@@ -1,14 +1,9 @@
 <section class="detailedRecipeMedia">
   <!-- Loop through all media items and display them -->
   <h3>{{ recipe?.title }}</h3>
-  <!-- <div class="videoContainer" *ngFor="let mediaItem of recipe?.media">
-    
-    <video *ngIf="mediaItem?.type?.startsWith('video')" controls autoplay>
-        <source [src]="getFullMediaUrl(mediaItem.url)" [type]="mediaItem?.type">
-        Your browser does not support the video tag.
-    </video>
-    <img *ngIf="mediaItem.type.startsWith('image')" [src]="getFullMediaUrl(mediaItem.url)" alt="{{ recipe?.title }}">
-  </div> -->
+  <button (click)="toggleListening()" class="voice-control-button">
+    {{ isListening ? 'Stop Listening' : 'Start Listening' }}
+  </button>
   <div id="recipeMediaCarousel" class="videoContainer carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div *ngFor="let mediaItem of recipe?.media; let isFirst = first" class="carousel-item" [class.active]="isFirst">
@@ -43,8 +38,6 @@
       </div>
       <div class="instructionCard">
           <h3>Instructions</h3>
-          <!-- Safely display instructions if they exist -->
-          <!-- <p>{{ recipe?.instructions }}</p> -->
           <div *ngFor="let instruction of recipe?.instructions">
             <strong>{{ instruction.step }}</strong>
             <p>{{ instruction.description }}</p>
