@@ -33,12 +33,14 @@
   <div class="cardContainer">
       <div class="ingredientCard">
           <h3>Ingredient List</h3>
+          <button (click)="readIngredients()">Read Ingredients</button>
           <div *ngFor="let ingredient of recipe?.ingredients">
             <p>{{ ingredient.name }} - {{ ingredient.quantity }}</p>
           </div>
       </div>
       <div class="instructionCard">
           <h3>Instructions</h3>
+          <button (click)="readInstructions()">Read Instructions</button>
           <div *ngFor="let instruction of recipe?.instructions">
             <strong>{{ instruction.step }}</strong>
             <p>{{ instruction.description }}</p>

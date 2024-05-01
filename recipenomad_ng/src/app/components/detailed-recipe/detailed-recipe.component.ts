@@ -15,6 +15,7 @@ export class DetailedRecipeComponent implements OnInit, OnDestroy {
   private speechRecognition: any;
   isListening: boolean = false;  // Flag to track if speech recognition is active
   @ViewChild('videoPlayer') videoPlayer!: ElementRef<HTMLVideoElement>;
+  private speechSynthesis: SpeechSynthesis = window.speechSynthesis;
 
   handleVoiceCommand(command: string) {
     switch(command) {
@@ -24,6 +25,8 @@ export class DetailedRecipeComponent implements OnInit, OnDestroy {
       case 'stop':
         this.stopVideo();
         break;
+      case 'next':
+        this.readInstructions();
     }
   }
 
@@ -54,6 +57,7 @@ export class DetailedRecipeComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.speechRecognition.stop();
+    this.speechSynthesis.cancel();  // Stop speaking when component is destroyed
   }
 
   toggleListening(): void {
@@ -78,7 +82,6 @@ export class DetailedRecipeComponent implements OnInit, OnDestroy {
     this.isListening = true;
   }
 
-
   stopListening(): void {
     if (this.speechRecognition) {
       this.speechRecognition.stop();
@@ -87,6 +90,62 @@ export class DetailedRecipeComponent implements OnInit, OnDestroy {
   }
 
 
+  readAloud(text: string): void {
+    if (this.speechSynthesis.speaking) {
+      this.speechSynthesis.cancel();  // Stop current speech before starting a new one
+    }
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'en-US';  // Set language
+    this.speechSynthesis.speak(utterance);
+  }
+
+  readIngredients(): void {
+    if (this.recipe && this.recipe.ingredients) {
+      console.log('reading ingredients')
+      const ingredientsText = this.recipe.ingredients
+        .map(ing => `${ing.name} - ${ing.quantity}`)
+        .join(', ');  // Combine all ingredients into a single string
+      this.readAloud(ingredientsText);
+    }
+  }
+
+   currentInstructionIndex: number = 0;
+
+  readInstructions(): void {
+    if (this.recipe && this.recipe.instructions && this.currentInstructionIndex < this.recipe.instructions.length) {
+      const currentInstruction = this.recipe.instructions[this.currentInstructionIndex];
+      console.log('Reading instruction:', currentInstruction);
+      this.readAloud(`${currentInstruction.step}: ${currentInstruction.description}`);
+      this.currentInstructionIndex++;  // Move to the next instruction
+    } else {
+      console.log('No more instructions or invalid index');
+      this.speechSynthesis.speak(new SpeechSynthesisUtterance('All steps have been read.'));
+      this.currentInstructionIndex = 0;  // Reset index or handle completion
+    }
+  }
+
+  // TTS for all steps  
+  // readInstructions(): void {
+  //   if (this.recipe && this.recipe.instructions && this.currentInstructionIndex < this.recipe.instructions.length) {
+  //     const currentInstruction = this.recipe.instructions[this.currentInstructionIndex];
+  //     console.log('Reading instruction:', currentInstruction);
+  //     const utterance = new SpeechSynthesisUtterance(`${currentInstruction.step}: ${currentInstruction.description}`);
+  //     utterance.lang = 'en-US';  // Ensure the language setting is consistent
+  
+  //     utterance.onend = () => {
+  //       console.log('Finished reading the current instruction');
+  //       this.currentInstructionIndex++;  // Move to the next instruction
+  //       this.readInstructions();  // Recursively call to read the next instruction
+  //     };
+  
+  //     this.speechSynthesis.speak(utterance);
+  //   } else {
+  //     console.log('No more instructions or invalid index');
+  //     this.speechSynthesis.speak(new SpeechSynthesisUtterance('All steps have been read.'));
+  //     this.currentInstructionIndex = 0;  // Reset index or handle completion
+  //   }
+  // }
+  
 
   fetchRecipe(recipeId: string): void {
     this.recipeService.getRecipe(recipeId).subscribe({
