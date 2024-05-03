@@ -78,31 +78,10 @@
       <div class="infoDiv">
           <p>STEP 2: Fill the parts please.</p>
       </div>
-      <!-- <div class="recipeForm">
-        <form (ngSubmit)="submitRecipeForm()">
-          <div>
-            <label for="recipeName">Recipe Name:</label>
-            <input type="text" id="recipeName" name="recipeName" [(ngModel)]="recipe.title" required>
-          </div>     
-          <div>
-            <label for="recipeCategory">Recipe Category:</label>
-            <input type="text" id="recipeCategory" name="recipeCategory" [(ngModel)]="recipe.category" required>
-          </div>     
-          <div>
-            <label for="ingredientList">Ingredient List:</label>
-            <textarea id="ingredientList" name="ingredientList" [(ngModel)]="recipe.ingredients" required></textarea>
-          </div>        
-          <div>
-            <label for="instructions">Instructions:</label>
-            <textarea id="instructions" name="instructions" [(ngModel)]="recipe.instructions" required></textarea>
-          </div>        
-          <button type="submit" (click)="succesfullyCreated()">Next</button>
-        </form>        
-      </div> -->
       <div class="recipeForm">
         <form #recipeForm="ngForm" (ngSubmit)="recipeForm.valid && submitRecipeForm()" ngNativeValidate>
           <div>
-            <label for="recipeName">Recipe Name:</label>
+            <label for="recipeName" style="margin: 0;">Recipe Name:</label>
             <input type="text" id="recipeName" name="recipeName" [(ngModel)]="recipe.title" #title="ngModel" required>
             <div *ngIf="title.touched && title.errors?.['required']">
               <small class="text-danger">Recipe name is required.</small>
@@ -110,7 +89,7 @@
           </div>
           <div>
             <label for="recipeCategory">Recipe Category:</label>
-            <select id="recipeCategory" name="recipeCategory" [(ngModel)]="recipe.category" #category="ngModel" required>
+            <select class="dropdown" id="recipeCategory" name="recipeCategory" [(ngModel)]="recipe.category" #category="ngModel" required>
               <option value="" disabled selected>Select a category</option>
               <option value="vegan">Vegan</option>
               <option value="pasta">Pasta</option>
@@ -122,34 +101,63 @@
               <small class="text-danger">Category is required.</small>
             </div>
           </div>
-          <div>
+          <div class="sub-forms">
+            <div class="half" style="margin-right: 1rem;">
+              <label for="ingredientList"><b>Ingredient List</b></label>
+              <div *ngFor="let ingredient of recipe.ingredients; let i = index" class="ingredient-entry">
+                <label style="margin: 0;"> Ingredient {{ i + 1 }}:</label>
+                <input type="text" id="ingredientName{{ i }}" name="ingredientName{{ i }}" [(ngModel)]="ingredient.name" placeholder="Ingredient name" required>
+                <input type="text" id="ingredientQuantity{{ i }}" name="ingredientQuantity{{ i }}" [(ngModel)]="ingredient.quantity" placeholder="Quantity" required>
+              </div>
+              <div class="recipeNavButton" >
+                <button class="secondaryButton" style="margin-top: 0;" type="button" (click)="addIngredient()">Add Ingredient</button>
+              </div>
+                <!-- <div *ngIf="ingredients.touched && ingredients.errors?.['required']">
+                <small class="text-danger">Ingredients list is required.</small>
+              </div> -->
+            </div>
+
+            <div class="half">
+              <label for="ingredientList"><b>Instruction Steps</b></label>
+              <div *ngFor="let instruction of recipe.instructions; let i = index" class="instruction-entry">
+                <div>
+                  <label for="stepDesc{{ i }}" style="margin: 0; ">Step {{ i + 1 }}:</label>
+                  <textarea id="stepDesc{{ i }}" name="stepDesc{{ i }}" [(ngModel)]="instruction.description" required></textarea>
+                  <!-- <div *ngIf="instructions.touched && instructions.errors?.['required']">
+                    <small class="text-danger">Instructions are required.</small>
+                  </div> -->
+                </div>
+              </div>
+              <div class="recipeNavButton" >
+                <button class="secondaryButton" style="margin-top: 0;" type="button" (click)="addInstruction()">Add Step</button>
+              </div>              
+            </div>
+
+          </div>
+          <!-- <div>
             <label for="ingredientList">Ingredient List:</label>
             <div *ngFor="let ingredient of recipe.ingredients; let i = index" class="ingredient-entry">
               <input type="text" id="ingredientName{{ i }}" name="ingredientName{{ i }}" [(ngModel)]="ingredient.name" placeholder="Ingredient name" required>
               <input type="text" id="ingredientQuantity{{ i }}" name="ingredientQuantity{{ i }}" [(ngModel)]="ingredient.quantity" placeholder="Quantity" required>
             </div>
-            <button type="button" (click)="addIngredient()">Add Ingredient</button>
-            <!-- <div *ngIf="ingredients.touched && ingredients.errors?.['required']">
-              <small class="text-danger">Ingredients list is required.</small>
-            </div> -->
+            <div class="recipeNavButton" >
+              <button class="secondaryButton" style="margin-top: 0;" type="button" (click)="addIngredient()">Add Ingredient</button>
+            </div>
           </div>
           <div>
             <div *ngFor="let instruction of recipe.instructions; let i = index" class="instruction-entry">
               <div>
                 <label for="stepDesc{{ i }}">Step {{ i + 1 }}:</label>
                 <textarea id="stepDesc{{ i }}" name="stepDesc{{ i }}" [(ngModel)]="instruction.description" required></textarea>
-                <!-- <div *ngIf="instructions.touched && instructions.errors?.['required']">
-                  <small class="text-danger">Instructions are required.</small>
-                </div> -->
               </div>
             </div>
             <div class="recipeNavButton" >
               <button class="secondaryButton" style="margin-top: 0;" type="button" (click)="addInstruction()">Add Step</button>
-            </div>
-            
-          </div>
+            </div>            
+          </div> -->
+
           <div class="submitButton">
-            <button type="submit">Next</button>
+            <button type="submit" class="primaryButton">Create Recipe</button>
           </div>
         </form>
       </div>

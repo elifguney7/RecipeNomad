@@ -530,9 +530,9 @@ section{
     border: none;
 }
 .primaryButton:hover {
-    background-color: var(--white);
-    border: 2px solid black;
-    color: var(--black);
+    background-color: var(--white) !important;
+    border: 2px solid black !important;
+    color: var(--black) !important;
 }
 .buttonContainer{
     display: flex;
@@ -790,6 +790,16 @@ span p {
     color:var(--white);
     font-size:15px !important;
     font-weight: bold;
+}
+select {
+    width:195px;
+    height:40px;
+    border-radius: 0.75rem;
+    color: var(--black);
+    background-color:var(--white);
+    font-size:15px !important;
+    font-weight: bold;
+    text-align: center;
 }
 .dropdown-menu {
     width:195px;
@@ -1282,17 +1292,18 @@ visibility: visible;
 }
 .recipeForm textarea {
     width: 100%;
-    min-height: 125px;
+    min-height: 99.5px;
     height: auto;
-    padding: 12px 20px;
+    padding: 10px 10px;
     box-sizing: border-box;
-    border: 2px solid #ccc;
+    border: 1px solid #ccc;
     border-radius: 4px;
     background-color: #fff;
     resize: none;
-    margin-bottom: 1rem;
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
-.recipeForm button[type=submit] {
+/* .recipeForm button[type=submit] {
     background-color: #fff;
     border: 2px solid black;
     border-radius: 0.75rem;
@@ -1303,7 +1314,7 @@ visibility: visible;
     cursor: pointer;
     font-size: 14px !important;
     font-weight: bold;
-}
+} */
 .recipeForm button[type=submit]:hover {
     background-color: black;
     color: #fff;
@@ -1335,6 +1346,20 @@ visibility: visible;
     display: flex;
     justify-content: center;
     padding-bottom: 1rem;
+}
+.sub-forms {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+.sub-forms .recipeNavButton {
+    display: flex;
+    width: 100%;
+}
+.half {
+    width: 100%;
 }
 /* About page  */
 /* .container {
@@ -2043,6 +2068,16 @@ input[type="password"] {
         width: 80%;
         padding: 1rem;        
         margin-top: 0.5rem;
+    }
+    .sub-forms {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom:0;
+        margin-top: 0;
+    }
+    .half{
+        margin-top: 1rem;
     }
     /* about mobile styling */
     .photoAndDesc {
