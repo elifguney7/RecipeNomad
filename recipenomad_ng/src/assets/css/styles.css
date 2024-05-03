@@ -876,6 +876,17 @@ visibility: visible;
     width: 80%;
     margin-bottom: 0;
 }
+.recipeCardHeader {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.speaker-btn {
+    outline: none;
+    border: none;
+}
 .detailedRecipeInfo {
     display: flex;
     flex-direction: column;

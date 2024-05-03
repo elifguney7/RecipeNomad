@@ -27,6 +27,10 @@ export class DetailedRecipeComponent implements OnInit, OnDestroy {
         break;
       case 'next':
         this.readInstructions();
+        break;
+      case 'repeat':
+        this.repeatCurrentInstruction();
+      break;
     }
   }
 
@@ -142,6 +146,17 @@ export class DetailedRecipeComponent implements OnInit, OnDestroy {
     }
   }
 
+  repeatCurrentInstruction(): void {
+    if (this.recipe && this.recipe.instructions && this.currentInstructionIndex > 0) {
+      // Check if there's a valid current instruction index, and adjust by -1 because it points to the next step after reading
+      const currentInstruction = this.recipe.instructions[this.currentInstructionIndex - 1];
+      console.log('Repeating instruction:', currentInstruction);
+      this.readAloud(`${currentInstruction.step}: ${currentInstruction.description}`);
+    } else {
+      console.log('No current instruction to repeat or index out of range');
+      this.speechSynthesis.speak(new SpeechSynthesisUtterance('No current instruction to repeat.'));
+    }
+  }
   // TTS for all steps  
   // readInstructions(): void {
   //   if (this.recipe && this.recipe.instructions && this.currentInstructionIndex < this.recipe.instructions.length) {
