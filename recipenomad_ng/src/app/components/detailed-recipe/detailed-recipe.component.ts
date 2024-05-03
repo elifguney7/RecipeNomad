@@ -45,7 +45,18 @@ export class DetailedRecipeComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute
   ) {}
 
+  togglePopup(): void {
+    const popup: HTMLElement | null = document.getElementById("popup");
+    if (popup) {
+      popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+      console.log('Toggle function called, new display style:', popup.style.display);
+    } else {
+      console.log('Failed to find element with ID "popup"');
+    }
+  }
+  
   ngOnInit(): void {
+    this.warmUpSynthesisEngine();
     // Retrieve the recipe ID from the route parameters
     this.route.params.subscribe(params => {
       const recipeId = params['id']; // Ensure that 'id' matches the route configuration parameter
@@ -53,6 +64,12 @@ export class DetailedRecipeComponent implements OnInit, OnDestroy {
         this.fetchRecipe(recipeId);
       }
     });
+  }
+  warmUpSynthesisEngine(): void {
+    // Speak a zero-width space to initialize the speech synthesis engine without actual speech.
+    const dummyUtterance = new SpeechSynthesisUtterance('\u200B');
+    dummyUtterance.volume = 0; // Silent
+    this.speechSynthesis.speak(dummyUtterance);
   }
 
   ngOnDestroy(): void {
@@ -94,8 +111,9 @@ export class DetailedRecipeComponent implements OnInit, OnDestroy {
     if (this.speechSynthesis.speaking) {
       this.speechSynthesis.cancel();  // Stop current speech before starting a new one
     }
+    
     const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'en-US';  // Set language
+    utterance.lang = 'en-US';  // Set the language
     this.speechSynthesis.speak(utterance);
   }
 
@@ -105,12 +123,12 @@ export class DetailedRecipeComponent implements OnInit, OnDestroy {
       const ingredientsText = this.recipe.ingredients
         .map(ing => `${ing.name} - ${ing.quantity}`)
         .join(', ');  // Combine all ingredients into a single string
+        //AAdd delay here
       this.readAloud(ingredientsText);
     }
   }
 
-   currentInstructionIndex: number = 0;
-
+  currentInstructionIndex: number = 0;
   readInstructions(): void {
     if (this.recipe && this.recipe.instructions && this.currentInstructionIndex < this.recipe.instructions.length) {
       const currentInstruction = this.recipe.instructions[this.currentInstructionIndex];
@@ -160,6 +178,6 @@ export class DetailedRecipeComponent implements OnInit, OnDestroy {
   }
  
   getFullMediaUrl(relativeUrl: string): string {
-    return `${environment.apiUrl}/${relativeUrl}`; // Ensure environment.apiUrl is set to your server's URL
+    return `${environment.apiUrl}/${relativeUrl}`; 
   }
 }

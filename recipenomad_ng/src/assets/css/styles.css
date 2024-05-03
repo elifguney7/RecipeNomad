@@ -814,6 +814,50 @@ span p {
     align-items: center;
     margin-bottom: 1rem;
 }
+.info-button {
+    position: relative;
+    outline: none;
+    border: none;
+    background-color: #FFFFFF;
+}
+.tooltip-text {
+    visibility: hidden;
+    width: 140px;
+    background-color: #fff;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 200%;
+    margin-left: -70px;
+}
+.info-button:hover .tooltip-text {
+visibility: visible;
+}
+.info-button:focus {
+    border: none;
+    outline: none;
+}
+.popup {
+    position: fixed;
+    width: 50%;
+    background: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    z-index: 100;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 14px;
+}
+.popup h3 {
+    width: 100% !important;
+    margin-bottom: 1rem !important;
+    font-size: 28px;
+}
 .videoContainer {
     display: flex;
     flex-direction: column;
@@ -886,7 +930,7 @@ span p {
     border: 2px solid black;
 }
 .secondaryButton:hover {
-    background-color: var(--black);
+    background-color: var(--black) !important;
     color: var(--white);
 }
 .suggestionsCard {
